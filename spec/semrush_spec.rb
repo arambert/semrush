@@ -1,5 +1,5 @@
 require 'spec_helper'
-API_KEY = "replace_this_with_you_api_key"
+API_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 describe Semrush, "config" do
   it "comes from a module" do #simple test to init tests
