@@ -1,0 +1,63 @@
+= Semrush
+
+Semrush is a ruby wrapper for the SEMRush API.
+
+== Installation
+
+Add the gem to your Gemfile:
+
+  gem install semrush
+
+Create an initializer, for instance semrush.rb with the following:
+
+  Semrush.config do |config|
+    config.api_key = "7899esf6874"
+  end
+
+Replace '7899esf6874' with your SEMRush api key.
+
+== Getting started
+
+First, create a report for a domain, a URL or a phrase with:
+
+  report = Semrush::Report.domain("seobook.com")                 # for the "seobook.com" domain
+  report = Semrush::Report.url("http://tools.seobook.com/")      # for the "http://tools.seobook.com/" url
+  report = Semrush::Report.phrase("search+engine+optimization")  # for the "search+engine+optimization" phrase
+
+Then run the report type you need:
+
+  basic_data = report.basics
+
+or
+
+  keywords_data = report.keywords_organic
+
+== Parameters
+
+You may use the following parameters:
+
+  :db         # (String) select the google engine ('us' for google.comn 'fr' for google.fr)
+  :api_key    # (String) change the api_key
+  :limit      # (Integer) select only the first 'limit' entries
+  :offset     # (Integer) skip the first 'offset' entries
+  :export_columns # (String) select the columns you want to fetch, for instance: :export_columns => "Dn,Rk"
+
+Some examples:
+
+  report = Semrush::Report.domain("seobook.com", :db => 'us', :limit => 100)
+  data = report.basics
+
+or
+
+  report = Semrush::Report.domain("seobook.com")
+  data = report.basics(:db => 'us', :limit => 100)
+
+You will find more information about these parameters at http://www.semrush.com/api.html
+
+== About authors
+
+This gem is inspired by semrush-client (https://github.com/cramerdev/semrush-client).
+
+It has been rewritten and gemified for the internal use in Weboglobin (http://fr.weboglobin.com). It would be a shame not to share it !!
+
+This project rocks and uses MIT-LICENSE.

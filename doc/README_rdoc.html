@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Gemfile</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Semrush.html">Semrush</a>
+  
+    <li><a href="./Semrush/Exception.html">Semrush::Exception</a>
+  
+    <li><a href="./Semrush/Exception/ApiAccessDisabled.html">Semrush::Exception::ApiAccessDisabled</a>
+  
+    <li><a href="./Semrush/Exception/BadApiKey.html">Semrush::Exception::BadApiKey</a>
+  
+    <li><a href="./Semrush/Exception/BadArgument.html">Semrush::Exception::BadArgument</a>
+  
+    <li><a href="./Semrush/Exception/BadQuery.html">Semrush::Exception::BadQuery</a>
+  
+    <li><a href="./Semrush/Exception/Base.html">Semrush::Exception::Base</a>
+  
+    <li><a href="./Semrush/Exception/MandatoryParameterDomainNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterDomainNotSetOrEmtpy</a>
+  
+    <li><a href="./Semrush/Exception/MandatoryParameterPhraseNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterPhraseNotSetOrEmtpy</a>
+  
+    <li><a href="./Semrush/Exception/MandatoryParameterUrlNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterUrlNotSetOrEmtpy</a>
+  
+    <li><a href="./Semrush/Exception/NothingFound.html">Semrush::Exception::NothingFound</a>
+  
+    <li><a href="./Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
+  
+    <li><a href="./Semrush/Report.html">Semrush::Report</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Semrush"><a href="Semrush.html">Semrush</a></h1>
+
+<p><a href="Semrush.html">Semrush</a> is a ruby wrapper for the SEMRush API.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>Add the gem to your Gemfile:</p>
+
+<pre>gem install semrush</pre>
+
+<p>Create an initializer, for instance semrush.rb with the following:</p>
+
+<pre class="ruby"><span class="ruby-constant">Semrush</span>.<span class="ruby-identifier">config</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">api_key</span> = <span class="ruby-string">&quot;7899esf6874&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Replace ‘7899esf6874’ with your SEMRush api key.</p>
+
+<h2 id="label-Getting+started">Getting started</h2>
+
+<p>First, create a report for a domain, a URL or a phrase with:</p>
+
+<pre>report = Semrush::Report.domain(&quot;seobook.com&quot;)                 # for the &quot;seobook.com&quot; domain
+report = Semrush::Report.url(&quot;http://tools.seobook.com/&quot;)      # for the &quot;http://tools.seobook.com/&quot; url
+report = Semrush::Report.phrase(&quot;search+engine+optimization&quot;)  # for the &quot;search+engine+optimization&quot; phrase</pre>
+
+<p>Then run the report type you need:</p>
+
+<pre>basic_data = report.basics</pre>
+
+<p>or</p>
+
+<pre>keywords_data = report.keywords_organic</pre>
+
+<h2 id="label-Parameters">Parameters</h2>
+
+<p>You may use the following parameters:</p>
+
+<pre class="ruby">:<span class="ruby-identifier">db</span>         <span class="ruby-comment"># (String) select the google engine ('us' for google.comn 'fr' for google.fr)</span>
+:<span class="ruby-identifier">api_key</span>    <span class="ruby-comment"># (String) change the api_key</span>
+:<span class="ruby-identifier">limit</span>      <span class="ruby-comment"># (Integer) select only the first 'limit' entries</span>
+:<span class="ruby-identifier">offset</span>     <span class="ruby-comment"># (Integer) skip the first 'offset' entries</span>
+:<span class="ruby-identifier">export_columns</span> <span class="ruby-comment"># (String) select the columns you want to fetch, for instance: :export_columns =&gt; &quot;Dn,Rk&quot;</span>
+</pre>
+
+<p>Some examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>, :<span class="ruby-identifier">db</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'us'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>)
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>
+</pre>
+
+<p>or</p>
+
+<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>)
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>(:<span class="ruby-identifier">db</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'us'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>)
+</pre>
+
+<p>You will find more information about these parameters at <a
+href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
+
+<h2 id="label-About+authors">About authors</h2>
+
+<p>This gem is inspired by semrush-client (<a
+href="https://github.com/cramerdev/semrush-client">github.com/cramerdev/semrush-client</a>).</p>
+
+<p>It has been rewritten and gemified for the internal use in Weboglobin (<a
+href="http://fr.weboglobin.com">fr.weboglobin.com</a>). It would be a shame
+not to share it !!</p>
+
+<p>This project rocks and uses MIT-LICENSE.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
