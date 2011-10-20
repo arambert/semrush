@@ -209,7 +209,6 @@ module Semrush
           temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s))
         end
       }
-      puts "--- [URL=#{temp_url}] ---" #TODO: remove
       url = URI.parse(temp_url)
       response = Net::HTTP.start(url.host, url.port) {|http|
         http.get(url.path+"?"+url.query)
@@ -233,10 +232,7 @@ module Semrush
       params.delete(:db) unless DBS.include?(params[:db].try(:to_sym))
       params.delete(:report_type) unless REPORT_TYPES.include?(params[:report_type].try(:to_sym))
       params.delete(:request_type) unless REQUEST_TYPES.include?(params[:request_type].try(:to_sym))
-      puts "------------- before= #{@parameters}"
-      puts "------------- before= #{params}"
       @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => ""}.merge(@parameters).merge(params)
-      puts "------------- after= #{@parameters}"
       raise Semrush::Exception::BadArgument.new(self, "Request parameter is missing: Domain name, URL, or keywords are required.") unless @parameters[:request].present?
       raise Semrush::Exception::BadArgument.new(self, "Bad db: #{@parameters[:db]}") unless DBS.include?(@parameters[:db].try(:to_sym))
       raise Semrush::Exception::BadArgument.new(self, "Bad report type: #{@parameters[:report_type]}") unless REPORT_TYPES.include?(@parameters[:report_type].try(:to_sym))
