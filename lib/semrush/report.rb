@@ -214,6 +214,7 @@ module Semrush
       response = Net::HTTP.start(url.host, url.port) {|http|
         http.get(url.path+"?"+url.query)
       }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
+      response.force_encoding("utf-8")
       response.starts_with?("ERROR") ? error(response) : parse(response)
     end
 
