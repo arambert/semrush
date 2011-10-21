@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["arambert@weboglobin.com"]
   s.homepage    = "http://www.weboglobin.com"
   s.summary     = "This gem is a ruby client for the SemRush API."
+  s.description = "Repository at http://github.com/weboglobin/semrush. Documentation at http://rubydoc.info/gems/semrush/3.0.0/frames"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
