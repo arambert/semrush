@@ -209,6 +209,7 @@ module Semrush
           temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s))
         end
       }
+      puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
       url = URI.parse(temp_url)
       response = Net::HTTP.start(url.host, url.port) {|http|
         http.get(url.path+"?"+url.query)

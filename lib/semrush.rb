@@ -12,8 +12,11 @@ module Semrush
 
   mattr_accessor :api_key
   @@api_key = ""
+  mattr_accessor :debug
+  @@debug = false
 
-  # Email Options
+
+  # Email Options (TODO: remove if unnecessary)
   # config.email : recipient for the email notifications (default: nil)
   # config.email_options : Hash with email config (smtp, sendmail, ...). We use the Pony gem to send mails, this hash will be send to Pony.options
   # config.seconds_between_mails : Minimum time (in seconds) between 2 mails with the same subject
@@ -22,7 +25,6 @@ module Semrush
   @@email_options = {}
   mattr_accessor :seconds_between_mails
   @@seconds_between_mails = 600
-
   mattr_accessor :too_many_queries
   @@too_many_queries = {:subject => 'SemRush API: too many queries for the day', :body => 'You made too many requests for today. You should upgrade your plan in order to be able to send more requests to SemRush.'}
   mattr_accessor :too_many_queries_sent_at

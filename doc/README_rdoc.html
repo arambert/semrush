@@ -89,6 +89,8 @@
   
     <li><a href="./Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
   
+    <li><a href="./Semrush/Exception/WrongFormatOrEmptyKey.html">Semrush::Exception::WrongFormatOrEmptyKey</a>
+  
     <li><a href="./Semrush/Report.html">Semrush::Report</a>
   
     <li><a href="./Object.html">Object</a>
@@ -162,14 +164,40 @@ report = Semrush::Report.phrase(&quot;search+engine+optimization&quot;)  # for t
 <p>You will find more information about these parameters at <a
 href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
 
+<h2 id="label-Reports">Reports</h2>
+
+<h3 id="label-Source+of+reports">Source of reports</h3>
+
+<p>They are 3 sources for the reports: domain, url and phrase.</p>
+
+<pre>report = Semrush::Report.domain(&quot;seobook.com&quot;)                 # for the &quot;seobook.com&quot; domain
+report = Semrush::Report.url(&quot;http://tools.seobook.com/&quot;)      # for the &quot;http://tools.seobook.com/&quot; url
+report = Semrush::Report.phrase(&quot;search+engine+optimization&quot;)  # for the &quot;search+engine+optimization&quot; phrase</pre>
+
+<h3 id="label-Report+types">Report types</h3>
+
+<p>You may call for one of the following report types:</p>
+
+<pre>data = report.basics                          # main report for either a domain or a phrase
+data = report.keywords_organic                # keywords organic report for either a domain or a URL
+data = report.keywords_adwords                # keywords adwords report for either a domain or a URL
+data = report.competitors_organic             # for a domain
+data = report.competitors_adwords             # for a domain
+data = report.competitors_organic_by_adwords  # for a domain
+data = report.competitors_adwords_by_organic  # for a domain
+data = report.related                         # keywords related report for a phrase</pre>
+
+<p>For more information about the report types, please read <a
+href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
+
 <h2 id="label-About+authors">About authors</h2>
 
-<p>This gem is inspired by semrush-client (<a
+<p>This gem is inspired by the work of Cramer Development for the
+semrush-client plugin (<a
 href="https://github.com/cramerdev/semrush-client">github.com/cramerdev/semrush-client</a>).</p>
 
 <p>It has been rewritten and gemified for the internal use in Weboglobin (<a
-href="http://fr.weboglobin.com">fr.weboglobin.com</a>). It would be a shame
-not to share it !!</p>
+href="http://fr.weboglobin.com">fr.weboglobin.com</a>).</p>
 
 <p>This project rocks and uses MIT-LICENSE.</p>
 

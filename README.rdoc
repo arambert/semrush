@@ -54,10 +54,35 @@ or
 
 You will find more information about these parameters at http://www.semrush.com/api.html
 
+== Reports
+
+=== Source of reports
+
+They are 3 sources for the reports: domain, url and phrase.
+
+  report = Semrush::Report.domain("seobook.com")                 # for the "seobook.com" domain
+  report = Semrush::Report.url("http://tools.seobook.com/")      # for the "http://tools.seobook.com/" url
+  report = Semrush::Report.phrase("search+engine+optimization")  # for the "search+engine+optimization" phrase
+
+=== Report types
+
+You may call for one of the following report types:
+
+  data = report.basics                          # main report for either a domain or a phrase
+  data = report.keywords_organic                # keywords organic report for either a domain or a URL
+  data = report.keywords_adwords                # keywords adwords report for either a domain or a URL
+  data = report.competitors_organic             # for a domain
+  data = report.competitors_adwords             # for a domain
+  data = report.competitors_organic_by_adwords  # for a domain
+  data = report.competitors_adwords_by_organic  # for a domain
+  data = report.related                         # keywords related report for a phrase
+
+For more information about the report types, please read http://www.semrush.com/api.html
+
 == About authors
 
-This gem is inspired by semrush-client (https://github.com/cramerdev/semrush-client).
+This gem is inspired by the work of Cramer Development for the semrush-client plugin (https://github.com/cramerdev/semrush-client).
 
-It has been rewritten and gemified for the internal use in Weboglobin (http://fr.weboglobin.com). It would be a shame not to share it !!
+It has been rewritten and gemified for the internal use in Weboglobin (http://fr.weboglobin.com).
 
 This project rocks and uses MIT-LICENSE.
