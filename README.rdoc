@@ -2,6 +2,11 @@
 
 Semrush is a ruby wrapper for the SEMRush API.
 
+== Requirements
+
+- Ruby 1.9
+- ActiveSupport (tested with ActiveSupport 3.1)
+
 == Installation
 
 Add the gem to your Gemfile:
