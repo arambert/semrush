@@ -251,7 +251,11 @@ module Semrush
       if error_class == "NothingFound"
         []
       else
-        raise Semrush::Exception.const_get(error_class).new(self, "#{name} (#{code})")
+        begin
+          raise Semrush::Exception.const_get(error_class).new(self, "#{name} (#{code})")
+        rescue
+          raise Semrush::Exception::Base.new(self, "#{name} (#{code}) *** error_class=#{error_class} not implemented ***")
+        end
       end
     end
 
