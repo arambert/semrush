@@ -5,7 +5,7 @@ Semrush is a ruby wrapper for the SEMRush API.
 == Requirements
 
 - Ruby 1.9
-- ActiveSupport (tested with ActiveSupport 3.1)
+- ActiveSupport (tested with ActiveSupport 3.1 & 3.2)
 
 == Installation
 
