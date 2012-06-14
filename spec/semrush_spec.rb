@@ -95,6 +95,11 @@ describe Semrush, "running phrase reports" do
       @parsed.first.should be_a_kind_of(Hash) if !@parsed.first.nil?
     end
   end
+  [:basics, :related].each do |method|
+    it "deals correctly with & in phrase" do
+      lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us)}.should_not raise_error
+    end
+  end
 end
 
 describe Semrush, "parameters in reports" do
