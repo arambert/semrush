@@ -206,7 +206,7 @@ module Semrush
         if v.blank?
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
         else
-          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s))
+          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
         end
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
