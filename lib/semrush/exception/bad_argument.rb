@@ -7,5 +7,6 @@ module Semrush
     class MandatoryParameterUrlNotSetOrEmtpy <  BadArgument; end
     class MandatoryParameterPhraseNotSetOrEmtpy <  BadArgument; end
     class WrongFormatOrEmptyKey <  BadArgument; end
+    class Nolimit <  BadArgument; end
   end
 end
