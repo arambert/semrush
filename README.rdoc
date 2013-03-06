@@ -41,7 +41,7 @@ or
 
 You may use the following parameters:
 
-  :db         # (String) select the google engine ('us' for google.comn 'fr' for google.fr)
+  :db         # (String) select the google engine ('us' for google.com 'fr' for google.fr)
   :api_key    # (String) change the api_key
   :limit      # (Integer) select only the first 'limit' entries
   :offset     # (Integer) skip the first 'offset' entries
