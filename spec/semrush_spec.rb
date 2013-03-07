@@ -14,14 +14,32 @@ describe Semrush, "config" do
   end
 end
 
+describe Semrush, "get remaining_quota" do
+  before(:all) do #once (and could be modified by the following tests)
+     Semrush.config do |config|
+      config.api_key = API_KEY
+        config.debug = true
+    end
+  end
+  it "works when calling remaining_quota" do
+    lambda{Semrush::Report.remaining_quota}.should_not raise_error
+  end
+  it "gets remaining_quota as an integer" do
+    q = Semrush::Report.remaining_quota
+    puts "remaining_quota: #{q}"
+    q.should be_a_kind_of(Integer)
+  end
+end
+
 describe Semrush, "running basic reports" do
   before(:all) do #once (and could be modified by the following tests)
      Semrush.config do |config|
       config.api_key = API_KEY
+        config.debug = true
     end
   end
   it "works with the root method 'domain_rank'" do
-    lambda{Semrush::Report.new.domain_rank(:request_type => :domain, :request => "seobook.com", :db => :us)}.should_not raise_error
+    lambda{Semrush::Report.new.domain_rank(:request_type => :domain, :request => "seobook.com", :db => :us, :limit => 10)}.should_not raise_error
   end
 end
 
@@ -29,6 +47,7 @@ describe Semrush, "running domain reports" do
   before(:all) do #once (and could be modified by the following tests)
      Semrush.config do |config|
       config.api_key = API_KEY
+        config.debug = true
     end
   end
   it "initializes correctly" do
@@ -39,7 +58,7 @@ describe Semrush, "running domain reports" do
   end
   [:basics, :keywords_organic, :keywords_adwords].each do |method|
     it "works with the method '#{method}'" do
-      lambda{@parsed = Semrush::Report.domain("seobook.com").send(method, :db => :us)}.should_not raise_error
+      lambda{@parsed = Semrush::Report.domain("seobook.com").send(method, :db => :us, :limit => 10)}.should_not raise_error
       @parsed.should_not be_nil
       @parsed.should be_a_kind_of(Array)
       @parsed.first.should be_a_kind_of(Hash) if !@parsed.first.nil?
@@ -52,6 +71,7 @@ describe Semrush, "running url reports" do
   before(:all) do #once (and could be modified by the following tests)
      Semrush.config do |config|
       config.api_key = API_KEY
+        config.debug = true
     end
   end
   it "initializes correctly" do
@@ -62,7 +82,7 @@ describe Semrush, "running url reports" do
   end
   [:keywords_organic, :keywords_adwords].each do |method|
     it "works with the method '#{method}'" do
-      lambda{@parsed = Semrush::Report.url("http://tools.seobook.com/").send(method, :db => :us)}.should_not raise_error
+      lambda{@parsed = Semrush::Report.url("http://tools.seobook.com/").send(method, :db => :us, :limit => 10)}.should_not raise_error
       @parsed.should_not be_nil
       @parsed.should be_a_kind_of(Array)
       @parsed.first.should be_a_kind_of(Hash) if !@parsed.first.nil?
@@ -70,7 +90,7 @@ describe Semrush, "running url reports" do
   end
   [:basics, :competitors_organic, :competitors_adwords, :competitors_organic_by_adwords, :competitors_adwords_by_organic].each do |method|
     it "should not work with the method '#{method}'" do
-      lambda{@parsed = Semrush::Report.url("http://tools.seobook.com/").send(method, :db => :us)}.should raise_error
+      lambda{@parsed = Semrush::Report.url("http://tools.seobook.com/").send(method, :db => :us, :limit => 10)}.should raise_error
     end
   end
 end
@@ -79,6 +99,7 @@ describe Semrush, "running phrase reports" do
   before(:all) do #once (and could be modified by the following tests)
      Semrush.config do |config|
       config.api_key = API_KEY
+        config.debug = true
     end
   end
   it "initializes correctly" do
@@ -89,7 +110,7 @@ describe Semrush, "running phrase reports" do
   end
   [:basics, :related].each do |method|
     it "works with the method '#{method}'" do
-      lambda{@parsed = Semrush::Report.phrase("search+engine+optimization").send(method, :db => :us)}.should_not raise_error
+      lambda{@parsed = Semrush::Report.phrase("search+engine+optimization").send(method, :db => :us, :limit => 10)}.should_not raise_error
       @parsed.should_not be_nil
       @parsed.should be_a_kind_of(Array)
       @parsed.first.should be_a_kind_of(Hash) if !@parsed.first.nil?
@@ -97,7 +118,7 @@ describe Semrush, "running phrase reports" do
   end
   [:basics, :related].each do |method|
     it "deals correctly with & in phrase" do
-      lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us)}.should_not raise_error
+      lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us, :limit => 10)}.should_not raise_error
     end
   end
 end
@@ -106,17 +127,18 @@ describe Semrush, "parameters in reports" do
   before(:all) do #once (and could be modified by the following tests)
      Semrush.config do |config|
       config.api_key = API_KEY
+        config.debug = true
     end
   end
   it "could be set in the class method" do
-    lambda{Semrush::Report.domain("seobook.com", :db => :fr, :limit => 1000, :offset => 2)}.should_not raise_error
+    lambda{Semrush::Report.domain("seobook.com", :db => :fr, :limit => 10, :offset => 2)}.should_not raise_error
   end
   it "could be set in the instance method" do
-    lambda{Semrush::Report.domain("seobook.com").basics(:db => :fr, :limit => 1000, :offset => 2)}.should_not raise_error
+    lambda{Semrush::Report.domain("seobook.com").basics(:db => :fr, :limit => 10, :offset => 2)}.should_not raise_error
   end
   it "both methods get the same results" do
-    in_class = Semrush::Report.domain("seobook.com", :db => :fr, :limit => 1000, :offset => 2).basics
-    in_object = Semrush::Report.domain("seobook.com").basics(:db => :fr, :limit => 1000, :offset => 2)
+    in_class = Semrush::Report.domain("seobook.com", :db => :fr, :limit => 10, :offset => 2).basics
+    in_object = Semrush::Report.domain("seobook.com").basics(:db => :fr, :limit => 10, :offset => 2)
     in_class.should == in_object
   end
 

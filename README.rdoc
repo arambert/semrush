@@ -37,13 +37,18 @@ or
 
   keywords_data = report.keywords_organic
 
+If you want to know your remaining api units:
+
+  units = Semrush::Report.remaining_quota
+
+
 == Parameters
 
 You may use the following parameters:
 
   :db         # (String) select the google engine ('us' for google.com 'fr' for google.fr)
   :api_key    # (String) change the api_key
-  :limit      # (Integer) select only the first 'limit' entries
+  :limit      # (Integer) select only the first 'limit' entries (This parameter is required in order to avoid uncontrolled heavy usage)
   :offset     # (Integer) skip the first 'offset' entries
   :export_columns # (String) select the columns you want to fetch, for instance: :export_columns => "Dn,Rk"
 

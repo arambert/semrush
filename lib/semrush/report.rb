@@ -59,6 +59,28 @@ module Semrush
       self.new(params.merge(:request_type => :url, :request => url))
     end
 
+    # Initializes & calls a report for the remaining API units
+    # Takes a hash parameter that may contain the following keys :
+    # * :api_key (ex: :api_key => 'gt97s6d4a6w')
+    def self.remaining_quota params = {}
+      temp_url = "#{API_UNITS_URL}" #do not copy the constant as is or else the constant would be modified !!
+      params = {:api_key => Semrush.api_key}.merge(params)
+      params.each {|k, v|
+        if v.blank?
+          temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
+        else
+          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
+        end
+      }
+      puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
+      url = URI.parse(temp_url)
+      response = Net::HTTP.start(url.host, url.port) {|http|
+        http.get(url.path+"?"+url.query)
+      }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
+      response.force_encoding("utf-8")
+      response.starts_with?("ERROR") ? error(response) : response.to_i
+    end
+
     # Main report.
     # Available for a phrase or a domain.
     # Default columns for a domain:

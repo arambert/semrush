@@ -9,7 +9,7 @@ require 'semrush/report'
 
 module Semrush
   API_REPORT_URL = "http://%DB%.api.semrush.com/?action=report&type=%REPORT_TYPE%&%REQUEST_TYPE%=%REQUEST%&key=%API_KEY%&display_limit=%LIMIT%&display_offset=%OFFSET%&export=api&export_columns=%EXPORT_COLUMNS%"
-
+  API_UNITS_URL = "http://fr.semrush.com/users/countapiunits.html?key=%API_KEY%"
   mattr_accessor :api_key
   @@api_key = ""
   mattr_accessor :debug
