@@ -233,13 +233,13 @@ module Semrush
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
       url = URI.parse(temp_url)
-      params[:before].call(params) if params[:before]
+      Semrush.before.call(params)
       response = Net::HTTP.start(url.host, url.port) {|http|
         http.get(url.path+"?"+url.query)
       }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
       response.force_encoding("utf-8")
       output = response.starts_with?("ERROR") ? error(response) : parse(response)
-      params[:after].call(params, output) if params[:after]
+      Semrush.after.call(params, output)
       output
     end
 
@@ -261,8 +261,6 @@ module Semrush
       params.delete(:request_type) unless REQUEST_TYPES.include?(params[:request_type].try(:to_sym))
       @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => ""}.merge(@parameters).merge(params)
       raise Semrush::Exception::Nolimit.new(self, "The limit parameter is missing: a limit is required.") unless @parameters[:limit].present?
-      raise Semrush::Exception::BadArgument.new(self, "Request parameter before is not a proc: proc type is required.") unless @parameters[:before].blank? || @parameters[:before].is_a?(Proc)
-      raise Semrush::Exception::BadArgument.new(self, "Request parameter after is not a proc: proc type is required.") unless @parameters[:after].blank? || @parameters[:after].is_a?(Proc)
       raise Semrush::Exception::BadArgument.new(self, "Request parameter is missing: Domain name, URL, or keywords are required.") unless @parameters[:request].present?
       raise Semrush::Exception::BadArgument.new(self, "Bad db: #{@parameters[:db]}") unless DBS.include?(@parameters[:db].try(:to_sym))
       raise Semrush::Exception::BadArgument.new(self, "Bad report type: #{@parameters[:report_type]}") unless REPORT_TYPES.include?(@parameters[:report_type].try(:to_sym))

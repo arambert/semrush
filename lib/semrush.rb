@@ -14,6 +14,10 @@ module Semrush
   @@api_key = ""
   mattr_accessor :debug
   @@debug = false
+  mattr_accessor :before
+  @@before = Proc.new{}
+  mattr_accessor :after
+  @@after = Proc.new{}
 
 
   # Email Options (TODO: remove if unnecessary)
@@ -33,6 +37,8 @@ module Semrush
     yield self
     Pony.options = @@email_options
     raise Exception::BadApiKey.new if @@api_key.nil? || @@api_key.empty?
+    raise Exception::BadArgument.new(self, "before is not a proc: proc type is required.") unless @@before.is_a?(Proc)
+    raise Exception::BadArgument.new(self, "after is not a proc: proc type is required.") unless @@after.is_a?(Proc)
   end
 
 end

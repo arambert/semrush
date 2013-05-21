@@ -21,6 +21,11 @@ Create an initializer, for instance semrush.rb with the following:
 
 Replace '7899esf6874' with your SEMRush api key.
 
+You may also use the following parameters in config:
+
+  config.before = lambda{|params| puts params}            # (Proc or lambda) will be called before the call to SemRush (even if this return false it still runs the request)
+  config.after  = lambda{|params, results| puts results}  # (Proc or lambda) will be called after the call to SemRush (if the call returns an exception, this will not be executed)
+
 == Getting started
 
 First, create a report for a domain, a URL or a phrase with:
@@ -51,8 +56,6 @@ You may use the following parameters:
   :limit      # (Integer) select only the first 'limit' entries (This parameter is required in order to avoid uncontrolled heavy usage)
   :offset     # (Integer) skip the first 'offset' entries
   :export_columns # (String) select the columns you want to fetch, for instance: :export_columns => "Dn,Rk"
-  :before     # (Proc or lambda) will be called before the call to SemRush (even if this return false it still runs the request)
-  :after      # (Proc or lambda) will be called after the call to SemRush (if the call returns an exception, this will not be executed)
 
 Some examples:
 
@@ -63,11 +66,6 @@ or
 
   report = Semrush::Report.domain("seobook.com")
   data = report.basics(:db => 'us', :limit => 100)
-
-or
-
-  data = Semrush::Report.domain("seobook.com").basics(:db => 'us', :limit => 100, :before => lambda{|params| puts params})
-  data = Semrush::Report.domain("seobook.com").basics(:db => 'us', :limit => 100, :after => lambda{|params, results| puts results})
 
 You will find more information about these parameters at http://www.semrush.com/api.html
 

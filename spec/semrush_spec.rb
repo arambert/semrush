@@ -38,12 +38,17 @@ describe "Requests:" do
     end
   end
 
-  describe Semrush, "log reports" do
-    it "with the request methods (eg: 'domain_rank' or 'basic' etc.) and before as a proc argument" do
-      lambda{Semrush::Report.domain("seobook.com", :db => :us).keywords_organic(:limit => 5, :before => lambda{|params| puts params})}.should_not raise_error
-    end
-    it "with the request methods (eg: 'domain_rank' or 'basic' etc.) and after as a proc argument" do
-      lambda{Semrush::Report.domain("seobook.com", :db => :us).keywords_organic(:limit => 5, :after => lambda{|params, results| puts results})}.should_not raise_error
+  describe Semrush, "log reports with before & after" do
+    before(:all) do #once (and could be modified by the following tests)
+      Semrush.config do |config|
+        config.api_key = API_KEY
+        config.debug = true
+        config.before = lambda{|params| puts params}
+        config.after = lambda{|params, results| puts results}
+      end
+    end  
+    it "works" do
+      lambda{Semrush::Report.domain("seobook.com", :db => :us).keywords_organic(:limit => 5)}.should_not raise_error
     end
   end
 
