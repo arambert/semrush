@@ -242,13 +242,13 @@ module Semrush
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
       url = URI.parse(temp_url)
-      Semrush.before.call(params.merge(:url => url))
+      Semrush.before.call(@parameters.merge(:url => url))
       response = Net::HTTP.start(url.host, url.port) {|http|
         http.get(url.path+"?"+url.query)
       }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
       response.force_encoding("utf-8")
       output = response.starts_with?("ERROR") ? error(response) : parse(response)
-      Semrush.after.call(params.merge(:url => url), output)
+      Semrush.after.call(@parameters.merge(:url => url), output)
       output
     end
 
