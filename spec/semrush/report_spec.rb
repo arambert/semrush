@@ -66,6 +66,7 @@ describe "Reports:" do
         lambda{@parsed = Semrush::Report.phrase("search+engine+optimization").send(method, :db => :us, :limit => 5)}.should_not raise_error
         @parsed.should_not be_nil
         @parsed.should be_a_kind_of(Array)
+        @parsed.count.should > 0
         @parsed.first.should be_a_kind_of(Hash) if !@parsed.first.nil?
       end
     end

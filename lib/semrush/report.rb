@@ -251,8 +251,10 @@ module Semrush
       @parameters.each {|k, v|
         if v.blank?
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
-        else
+        elsif k.to_sym==:display_filter
           temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
+        else
+          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
         end
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
