@@ -56,6 +56,8 @@ You may use the following parameters:
   :limit      # (Integer) select only the first 'limit' entries (This parameter is required in order to avoid uncontrolled heavy usage)
   :offset     # (Integer) skip the first 'offset' entries
   :export_columns # (String) select the columns you want to fetch, for instance: :export_columns => "Dn,Rk"
+  :display_sort   # (String) select the column and the order you want to sort with, for instance: :display_sort => 'tr_asc'
+  :display_filter # (String) list of filters for the report, separated by '|' (maximum number - 25). A filter consists of <sign>|<field>|<operation>|<value> (read http://www.semrush.com/api), for instance: :display_filter => '+|Po|Lt|5'
 
 Some examples:
 
@@ -84,8 +86,8 @@ They are 3 sources for the reports: domain, url and phrase.
 You may call for one of the following report types:
 
   data = report.basics                          # main report for either a domain or a phrase
-  data = report.keywords_organic                # keywords organic report for either a domain or a URL
-  data = report.keywords_adwords                # keywords adwords report for either a domain or a URL
+  data = report.organic                         # organic report for either a domain, a URL or a phrase
+  data = report.adwords                         # adwords report for either a domain or a URL
   data = report.competitors_organic             # for a domain
   data = report.competitors_adwords             # for a domain
   data = report.competitors_organic_by_adwords  # for a domain
@@ -93,6 +95,42 @@ You may call for one of the following report types:
   data = report.related                         # keywords related report for a phrase
 
 For more information about the report types, please read http://www.semrush.com/api.html
+
+== ChangeLog
+
+# 3.0.13, 2013-06-10
+
+  * Add report type 'phrase_oganic'
+  * Add parameter 'display_sort'
+  * Add parameter 'display_filter'
+
+# 3.0.12, 2013-05-31
+
+  * Force parameter 'limit' > 0 to prevent limit=0
+
+# 3.0.11, 2013-05-22
+
+  * Fix parameters accessible through Semrush.before & Semrush.after
+
+# 3.0.10, 2013-05-21
+
+  * Fix remaining_quota (problem with redirections)
+
+# 3.0.9, 2013-05-21
+
+  * Add url in parameters accessible through Semrush.before & Semrush.after
+
+# 3.0.8, 2013-05-21
+
+  * Move after & before callbacks to Semrush module: Semrush.before & Semrush.after
+
+# 3.0.7, 2013-05-21
+
+  * Add after & before callbacks
+
+# 3.0.6, 2013-05-7
+
+  * Add method remaining_quota
 
 == About authors
 
