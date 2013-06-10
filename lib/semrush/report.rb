@@ -9,7 +9,7 @@ module Semrush
   class Report
     DBS = [:us, :uk, :ru, :de, :fr, :es, :it, :br, :au] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta.
     REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic,
-                    :phrase_this, :phrase_related,
+                    :phrase_this, :phrase_organic, :phrase_related,
                     :url_organic, :url_adwords]
     REQUEST_TYPES = [:domain, :phrase, :url]
 
@@ -111,7 +111,7 @@ module Semrush
       domain? ? request(params.merge(:report_type => :domain_rank)) : request(params.merge(:report_type => :phrase_this))
     end
     
-    # Organic Keywords report
+    # Organic report
     # Can be called for a domain or a URL.
     # Default columns for a domain:
     # * Ph - The search query which the site has within the first 20 Google search results
@@ -135,11 +135,22 @@ module Semrush
     # * Tc - The ratio of the estimated cost of buying the same number of visitors for this search query to the estimated cost of purchasing the same number of targeted visitors coming to this URL
     # * Nr - The number of search results - how many pages does Google know for this query
     # * Td - Dynamics of change in the number of search queries in the past 12 months (estimated)
+    # Default columns for a phrase:
+    # * Dn - A site name
+    # * Ur - Target URL
+    def organic params = {}
+      case 
+      when url? then request(params.merge(:report_type => :url_organic))
+      when phrase? then request(params.merge(:report_type => :phrase_organic))
+      else request(params.merge(:report_type => :domain_organic))
+      end
+    end
     def keywords_organic params = {}
-      url? ? request(params.merge(:report_type => :url_organic)) : request(params.merge(:report_type => :domain_organic))
+      warn "[DEPRECATION] `keywords_organic` is deprecated.  Please use `organic` instead."
+      organic(params)
     end
 
-    # AdWords keywords report
+    # AdWords report
     # Can be called for a domain or a URL.
     # Default columns for a domain:
     # * Ph - Search query which the site buys in AdWords in Google
@@ -164,8 +175,12 @@ module Semrush
     # * Tc - The ratio of the estimated cost of buying the same number of visitors for this search query to the estimated cost of purchasing the same number of targeted visitors coming to this URL
     # * Nr - The number of search results - how many pages does Google know for this query
     # * Td - Dynamics of change in the number of search queries in the past 12 months (estimated)
-    def keywords_adwords params = {}
+    def adwords params = {}
       url? ? request(params.merge(:report_type => :url_adwords)) : request(params.merge(:report_type => :domain_adwords))
+    end
+    def keywords_adwords params = {}
+      warn "[DEPRECATION] `keywords_adwords` is deprecated.  Please use `adwords` instead."
+      adwords(params)
     end
 
     # Competitors in organic search report
@@ -237,7 +252,7 @@ module Semrush
         if v.blank?
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
         else
-          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
+          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
         end
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
@@ -261,6 +276,8 @@ module Semrush
     # * limit - number of results returned
     # * offset - says to skip that many results before beginning to return results to you
     # * export_columns - list of column names, separated by coma. You may list just the column names you need in an order you need.
+    # * display_sort - a sorting as a String eg: 'am_asc' or 'am_desc'(read http://www.semrush.com/api) 
+    # * display_filter - list of filters separated by "|" (maximum number - 25). A filter consists of <sign>|<field>|<operation>|<value> (read http://www.semrush.com/api) 
     #
     # more details in http://www.semrush.com/api.html
     def validate_parameters params = {}
@@ -268,7 +285,7 @@ module Semrush
       params.delete(:db) unless DBS.include?(params[:db].try(:to_sym))
       params.delete(:report_type) unless REPORT_TYPES.include?(params[:report_type].try(:to_sym))
       params.delete(:request_type) unless REQUEST_TYPES.include?(params[:request_type].try(:to_sym))
-      @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => ""}.merge(@parameters).merge(params)
+      @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => "", :display_sort => "", :display_filter => ""}.merge(@parameters).merge(params)
       raise Semrush::Exception::Nolimit.new(self, "The limit parameter is missing: a limit is required.") unless @parameters[:limit].present? && @parameters[:limit].to_i>0
       raise Semrush::Exception::BadArgument.new(self, "Request parameter is missing: Domain name, URL, or keywords are required.") unless @parameters[:request].present?
       raise Semrush::Exception::BadArgument.new(self, "Bad db: #{@parameters[:db]}") unless DBS.include?(@parameters[:db].try(:to_sym))

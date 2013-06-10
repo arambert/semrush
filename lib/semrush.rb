@@ -1,4 +1,5 @@
 require 'uri'
+require 'cgi'
 require 'net/http'
 require 'csv'
 require 'rubygems'
@@ -8,7 +9,7 @@ require 'semrush/exception'
 require 'semrush/report'
 
 module Semrush
-  API_REPORT_URL = "http://%DB%.api.semrush.com/?action=report&type=%REPORT_TYPE%&%REQUEST_TYPE%=%REQUEST%&key=%API_KEY%&display_limit=%LIMIT%&display_offset=%OFFSET%&export=api&export_columns=%EXPORT_COLUMNS%"
+  API_REPORT_URL = "http://%DB%.api.semrush.com/?action=report&type=%REPORT_TYPE%&%REQUEST_TYPE%=%REQUEST%&key=%API_KEY%&display_limit=%LIMIT%&display_offset=%OFFSET%&export=api&export_columns=%EXPORT_COLUMNS%&display_sort=%DISPLAY_SORT%&display_filter=%DISPLAY_FILTER%"
   API_UNITS_URL = "http://www.semrush.com/users/countapiunits.html?key=%API_KEY%"
   mattr_accessor :api_key
   @@api_key = ""
