@@ -57,6 +57,7 @@ describe "Reports:" do
   describe Semrush, "running phrase reports" do
     it "initializes correctly" do
       lambda{Semrush::Report.phrase("search+engine+optimization", :db => :us)}.should_not raise_error
+      Semrush::Report.phrase("zazazadsskhsqengineazazaoptimization", :db => :us, :limit => 1).organic.count.should == 0
     end
     it "initializes correctly with params" do
       lambda{Semrush::Report.phrase("search+engine+optimization", :db => :us)}.should_not raise_error

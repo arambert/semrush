@@ -98,6 +98,10 @@ For more information about the report types, please read http://www.semrush.com/
 
 == ChangeLog
 
+=== 3.0.15, 2013-06-26
+
+* activesupport dependency to >= 3.2.0 to support rails 4
+
 === 3.0.14, 2013-06-10
 
 * parameter 'display_filter' has to be url-encoded in a separate way
