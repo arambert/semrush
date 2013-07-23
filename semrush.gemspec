@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.name        = "semrush"
   s.version     = Semrush::VERSION
   s.authors     = ["arambert"]
-  s.email       = ["arambert@weboglobin.com"]
-  s.homepage    = "http://www.weboglobin.com"
+  s.email       = ["adrien@rambert.me"]
+  s.homepage    = "http://adrienrambert.com"
   s.summary     = "This gem is a ruby client for the SemRush API."
   s.description = "This gem is a ruby client for the SemRush API."
 
