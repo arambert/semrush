@@ -8,7 +8,7 @@ module Semrush
   # * :export_columns (ex: :export_columns => "Dn,Rk")
   class Report
     DBS = [:us, :uk, :ru, :de, :fr, :es, :it, :br, :au] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta.
-    REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical
+    REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical,
                     :phrase_this, :phrase_organic, :phrase_related,
                     :url_organic, :url_adwords]
     REQUEST_TYPES = [:domain, :phrase, :url]
