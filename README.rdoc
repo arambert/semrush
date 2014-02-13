@@ -93,6 +93,7 @@ You may call for one of the following report types:
   data = report.competitors_organic_by_adwords  # for a domain
   data = report.competitors_adwords_by_organic  # for a domain
   data = report.related                         # keywords related report for a phrase
+  data = report.history_adwords                 # ads history for either a domain or a phrase
 
 For more information about the report types, please read http://www.semrush.com/api.html
 
