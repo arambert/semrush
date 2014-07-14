@@ -6,7 +6,7 @@ describe "Reports:" do
       config.api_key = API_KEY
         config.debug = true
     end
-  end  
+  end
 
   describe Semrush, "running basic reports" do
     it "works with the root method 'domain_rank'" do
@@ -62,7 +62,7 @@ describe "Reports:" do
     it "initializes correctly with params" do
       lambda{Semrush::Report.phrase("search+engine+optimization", :db => :us)}.should_not raise_error
     end
-    [:basics, :related, :organic].each do |method|
+    [:basics, :related, :organic, :fullsearch].each do |method|
       it "works with the method '#{method}'" do
         lambda{@parsed = Semrush::Report.phrase("search+engine+optimization").send(method, :db => :us, :limit => 5)}.should_not raise_error
         @parsed.should_not be_nil

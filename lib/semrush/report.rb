@@ -9,7 +9,7 @@ module Semrush
   class Report
     DBS = [:us, :uk, :ru, :de, :fr, :es, :it, :br, :au] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta.
     REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical,
-                    :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical,
+                    :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical, :phrase_fullsearch,
                     :url_organic, :url_adwords]
     REQUEST_TYPES = [:domain, :phrase, :url]
 
@@ -18,7 +18,8 @@ module Semrush
     # Allows calls like:
     # * Semrush::Report.new.domain_rank(:request_type => :domain, :request => 'thedomain.com')
     # * Semrush::Report.new.domain_organic_organic(:request_type => :domain, :request => 'thedomain.com')
-    # * Semrush::Report.new.phrase_related(:request_type => :phrase, :request => 'the phrase')
+    # * Semrush::Report.new.phrase_related(:request_type => :phrase, :request => 'the+phrase')
+    # * Semrush::Report.new.phrase_fullsearch(:request_type => :phrase, :request => 'the+phrase')
     def method_missing(method, *args)
       return super unless REPORT_TYPES.include?(method) && args.first.is_a?(Hash)
       request args.first.merge(:report_type => method)
@@ -110,7 +111,7 @@ module Semrush
     def basics params = {}
       domain? ? request(params.merge(:report_type => :domain_rank)) : request(params.merge(:report_type => :phrase_this))
     end
-    
+
     # Organic report
     # Can be called for a domain or a URL.
     # Default columns for a domain:
@@ -139,7 +140,7 @@ module Semrush
     # * Dn - A site name
     # * Ur - Target URL
     def organic params = {}
-      case 
+      case
       when url? then request(params.merge(:report_type => :url_organic))
       when phrase? then request(params.merge(:report_type => :phrase_organic))
       else request(params.merge(:report_type => :domain_organic))
@@ -249,6 +250,18 @@ module Semrush
       request(params.merge(:report_type => :phrase_related))
     end
 
+    # Fullsearch keyword report
+    # Default columns:
+    # * Ph - The search query which the site has within the first 20 Google search results
+    # * Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google
+    # * Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars
+    # * Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition
+    # * Nr - The number of search results - how many pages does Google know for this query
+    # * Td - Dynamics of change in the number of search queries in the past 12 months (estimated)
+    def fullsearch params = {}
+      request(params.merge(:report_type => :phrase_fullsearch))
+    end
+
     private
 
     def request params = {}
@@ -284,8 +297,8 @@ module Semrush
     # * limit - number of results returned
     # * offset - says to skip that many results before beginning to return results to you
     # * export_columns - list of column names, separated by coma. You may list just the column names you need in an order you need.
-    # * display_sort - a sorting as a String eg: 'am_asc' or 'am_desc'(read http://www.semrush.com/api) 
-    # * display_filter - list of filters separated by "|" (maximum number - 25). A filter consists of <sign>|<field>|<operation>|<value> (read http://www.semrush.com/api) 
+    # * display_sort - a sorting as a String eg: 'am_asc' or 'am_desc'(read http://www.semrush.com/api)
+    # * display_filter - list of filters separated by "|" (maximum number - 25). A filter consists of <sign>|<field>|<operation>|<value> (read http://www.semrush.com/api)
     #
     # more details in http://www.semrush.com/api.html
     def validate_parameters params = {}
