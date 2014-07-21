@@ -100,6 +100,11 @@ For more information about the report types, please read http://www.semrush.com/
 
 == ChangeLog
 
+=== 3.0.16, 2014-07-21
+
+* Add support for fullsearch reports
+* Add support for Adwords history reports
+
 === 3.0.15, 2013-06-26
 
 * activesupport dependency to >= 3.2.0 to support rails 4
