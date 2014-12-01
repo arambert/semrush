@@ -8,7 +8,7 @@ require 'semrush/exception'
 require 'semrush/report'
 
 module Semrush
-  API_REPORT_URL = "http://api.semrush.com/?type=%REPORT_TYPE%&%REQUEST_TYPE%=%REQUEST%&key=%API_KEY%&display_limit=%LIMIT%&display_offset=%OFFSET%&export=api&database=%DB%&export_columns=%EXPORT_COLUMNS%&display_sort=%DISPLAY_SORT%&display_filter=%DISPLAY_FILTER%"
+  API_REPORT_URL = "http://api.semrush.com/?type=%REPORT_TYPE%&%REQUEST_TYPE%=%REQUEST%&key=%API_KEY%&display_limit=%LIMIT%&display_offset=%OFFSET%&export=api&database=%DB%&export_columns=%EXPORT_COLUMNS%&display_sort=%DISPLAY_SORT%&display_filter=%DISPLAY_FILTER%&display_date=%DISPLAY_DATE%"
   API_UNITS_URL = "http://www.semrush.com/users/countapiunits.html?key=%API_KEY%"
   mattr_accessor :api_key
   @@api_key = ""
