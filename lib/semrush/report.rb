@@ -306,7 +306,7 @@ module Semrush
       params.delete(:db) unless DBS.include?(params[:db].try(:to_sym))
       params.delete(:report_type) unless REPORT_TYPES.include?(params[:report_type].try(:to_sym))
       params.delete(:request_type) unless REQUEST_TYPES.include?(params[:request_type].try(:to_sym))
-      @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => "", :display_sort => "", :display_filter => ""}.merge(@parameters).merge(params)
+      @parameters = {:db => "us", :api_key => Semrush.api_key, :limit => "", :offset => "", :export_columns => "", :display_sort => "", :display_filter => "", :display_date => ""}.merge(@parameters).merge(params)
       raise Semrush::Exception::Nolimit.new(self, "The limit parameter is missing: a limit is required.") unless @parameters[:limit].present? && @parameters[:limit].to_i>0
       raise Semrush::Exception::BadArgument.new(self, "Request parameter is missing: Domain name, URL, or keywords are required.") unless @parameters[:request].present?
       raise Semrush::Exception::BadArgument.new(self, "Bad db: #{@parameters[:db]}") unless DBS.include?(@parameters[:db].try(:to_sym))

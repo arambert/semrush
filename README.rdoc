@@ -58,6 +58,7 @@ You may use the following parameters:
   :export_columns # (String) select the columns you want to fetch, for instance: :export_columns => "Dn,Rk"
   :display_sort   # (String) select the column and the order you want to sort with, for instance: :display_sort => 'tr_asc'
   :display_filter # (String) list of filters for the report, separated by '|' (maximum number - 25). A filter consists of <sign>|<field>|<operation>|<value> (read http://www.semrush.com/api), for instance: :display_filter => '+|Po|Lt|5'
+  :display_date	  # (String) select the date for the report data, in the format: YYYYMM15
 
 Some examples:
 

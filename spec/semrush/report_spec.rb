@@ -76,6 +76,11 @@ describe "Reports:" do
         lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us, :limit => 5)}.should_not raise_error
       end
     end
+    [:basics].each do |method|
+      it "accepts a display date parameter" do
+        lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us, :limit => 5, :display_date => Date.today.strftime('%Y%m%d'))}.should_not raise_error
+      end
+    end
   end
 
   describe Semrush, "parameters positions in reports" do
