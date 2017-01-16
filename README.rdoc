@@ -101,6 +101,10 @@ For more information about the report types, please read http://www.semrush.com/
 
 == ChangeLog
 
+=== 3.0.19, 2016-01-16
+
+* Fixes map bug with filtered organic report that has no results
+
 === 3.0.18, 2014-10-03
 
 * Add new databases (countries)
