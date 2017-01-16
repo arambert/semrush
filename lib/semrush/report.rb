@@ -333,6 +333,7 @@ module Semrush
     end
 
     def parse(text = "")
+      return [] if text.empty?
       csv = CSV.parse(text.to_s, :col_sep => ";")
       data = {}
       format_key = lambda do |k|

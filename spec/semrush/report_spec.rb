@@ -21,6 +21,11 @@ describe "Reports:" do
     it "initializes correctly with params" do
       lambda{Semrush::Report.domain("seobook.com", :db => :us)}.should_not raise_error
     end
+
+    it 'handles domains with no keywords' do
+      Semrush::Report.domain("sleepingexpert.net", :db => :us).organic(limit: 5, display_filter: '+|Tr|Gt|0.0|+|Po|Lt|11').should eq []
+    end
+
     [:basics, :organic, :adwords].each do |method|
       it "works with the method '#{method}'" do
         lambda{@parsed = Semrush::Report.domain("seobook.com").send(method, :db => :us, :limit => 5)}.should_not raise_error
