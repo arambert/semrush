@@ -5,5 +5,6 @@ require 'semrush' # and any other gems you need
 API_KEY = ENV['API_KEY'] || "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 RSpec.configure do |config|
-  # some (optional) config here
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 end
