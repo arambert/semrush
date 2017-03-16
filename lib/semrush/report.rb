@@ -9,7 +9,7 @@ module Semrush
   class Report
     DBS = [:us, :uk, :ca, :ru, :de, :fr, :es, :it, :br, :au, :ar, :be, :ch, :dk, :fi, :hk, :ie, :il, :mx, :nl, :no, :pl, :se, :sg, :tr] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta, etc
     REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical,
-                    :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical, :phrase_fullsearch,
+                    :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical, :phrase_fullsearch, :phrase_kdi,
                     :url_organic, :url_adwords]
     REQUEST_TYPES = [:domain, :phrase, :url]
 
@@ -260,6 +260,11 @@ module Semrush
     # * Td - Dynamics of change in the number of search queries in the past 12 months (estimated)
     def fullsearch params = {}
       request(params.merge(:report_type => :phrase_fullsearch))
+    end
+    
+    # TODO comments
+    def kdi params = {}
+      request(params.merge(:report_type => :phrase_kdi))
     end
 
     private
