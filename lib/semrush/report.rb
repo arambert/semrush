@@ -262,7 +262,12 @@ module Semrush
       request(params.merge(:report_type => :phrase_fullsearch))
     end
     
-    # TODO comments
+    # Keyword Difficulty report
+    # Usage:
+    # > report = Semrush::Report.phrase(phrases.join(';'), database: 'us', limit: 100).kdi
+    # Report constants an array of hashes:
+    # * keyword - phrase for KDI
+    # * keyword_difficulty_index - KDI for phrase
     def kdi params = {}
       request(params.merge(:report_type => :phrase_kdi))
     end

@@ -1,3 +1,3 @@
 module Semrush
-  VERSION = "3.0.19" # we want to follow the API version: for API 3.0, the gem will be version 3.0.x
+  VERSION = "3.0.20" # we want to follow the API version: for API 3.0, the gem will be version 3.0.x
 end
