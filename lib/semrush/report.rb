@@ -78,7 +78,7 @@ module Semrush
       end
       puts "[Semrush query] URL: #{@remaining_quota_url}" if Semrush.debug
       url = URI.parse(@remaining_quota_url)
-      response = Net::HTTP.start(url.host, url.port) {|http|
+      response = Net::HTTP.start(url.host, url.port, :use_ssl => true) {|http|
         http.get(url.path+"?"+url.query)
       }
       body = response.body
@@ -289,7 +289,7 @@ module Semrush
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
       url = URI.parse(temp_url)
       Semrush.before.call(@parameters.merge(:url => url))
-      response = Net::HTTP.start(url.host, url.port) {|http|
+      response = Net::HTTP.start(url.host, url.port, :use_ssl => true) {|http|
         http.get(url.path+"?"+url.query)
       }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
       response.force_encoding("utf-8")
