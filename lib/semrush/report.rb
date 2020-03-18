@@ -7,7 +7,7 @@ module Semrush
   # * :offset (ex: :offset => 5)
   # * :export_columns (ex: :export_columns => "Dn,Rk")
   class Report
-    DBS = [:us, :uk, :ca, :ru, :de, :fr, :es, :it, :br, :au, :ar, :be, :ch, :dk, :fi, :hk, :ie, :il, :mx, :nl, :no, :pl, :se, :sg, :tr, :in] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta, etc
+    DBS = [:us, :uk, :ca, :ru, :de, :fr, :es, :it, :br, :au, :ar, :be, :ch, :dk, :fi, :hk, :ie, :il, :mx, :nl, :no, :pl, :se, :sg, :tr, :in, :nz] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta, etc
     REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical,
                     :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical, :phrase_fullsearch, :phrase_kdi,
                     :url_organic, :url_adwords]
