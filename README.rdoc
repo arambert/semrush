@@ -5,7 +5,7 @@ Semrush is a ruby wrapper for the SEMRush API.
 == Requirements
 
 - Ruby 1.9 or 2.x
-- ActiveSupport (tested with ActiveSupport 3.1 & 3.2)
+- ActiveSupport
 
 == Installation
 
@@ -100,6 +100,10 @@ You may call for one of the following report types:
 For more information about the report types, please read http://www.semrush.com/api.html
 
 == ChangeLog
+
+=== 3.0.23, 2020-03-19
+
+* Add New Zealand 'nz' to allowed databases (countries)
 
 === 3.0.22, 2019-06-14
 
