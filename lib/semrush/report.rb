@@ -71,7 +71,7 @@ module Semrush
           if v.blank?
             temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
           else
-            temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
+            temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26'))
           end
         }
         temp_url
@@ -281,9 +281,9 @@ module Semrush
         if v.blank?
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
         elsif k.to_sym==:display_filter
-          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
+          temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
         else
-          temp_url.gsub!("%#{k.to_s.upcase}%", URI.escape(v.to_s).gsub('&', '%26'))
+          temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26'))
         end
       }
       puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
