@@ -21,12 +21,14 @@ module Semrush
     # * Semrush::Report.new.phrase_fullsearch(:request_type => :phrase, :request => 'the+phrase')
     def method_missing(method, *args)
       return super unless REPORT_TYPES.include?(method) && args.first.is_a?(Hash)
+
       request args.first.merge(:report_type => method)
     end
 
     def initialize params = {}
       @parameters = params
       @request_types = REQUEST_TYPES
+      @api_report_url = API_REPORT_URL
     end
 
     # Initializes a report for a specific domain.
@@ -39,6 +41,7 @@ module Semrush
     def self.domain domain, params = {}
       self.new(params.merge(:request_type => :domain, :request => domain))
     end
+
     # Initializes a report for a specific phrase (or keyword).
     # Takes a hash parameter that may contain the following keys :
     # * :db (ex: :db => "us")
@@ -49,6 +52,7 @@ module Semrush
     def self.phrase phrase, params = {}
       self.new(params.merge(:request_type => :phrase, :request => phrase))
     end
+
     # Initializes a report for a specific domain.
     # Takes a hash parameter that may contain the following keys :
     # * :db (ex: :db => "us")
@@ -298,6 +302,18 @@ module Semrush
       raise Semrush::Exception::BadArgument.new(self, "Bad db: #{@parameters[:db]}") unless DBS.include?(@parameters[:db].try(:to_sym))
       raise Semrush::Exception::BadArgument.new(self, "Bad report type: #{@parameters[:report_type]}") unless REPORT_TYPES.include?(@parameters[:report_type].try(:to_sym))
       raise Semrush::Exception::BadArgument.new(self, "Bad request type: #{@parameters[:request_type]}") unless REQUEST_TYPES.include?(@parameters[:request_type].try(:to_sym))
+    end
+
+    def domain?
+      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:domain
+    end
+
+    def url?
+      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:url
+    end
+
+    def phrase?
+      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:phrase
     end
   end
 end

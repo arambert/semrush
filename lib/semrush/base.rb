@@ -3,7 +3,7 @@ module Semrush
   class Base
     def request params = {}
       validate_parameters params
-      temp_url = "#{API_REPORT_URL}" #do not copy the constant as is or else the constant would be modified !!
+      temp_url = "#{@api_report_url}" #do not copy the constant as is or else the constant would be modified !!
       @parameters.each {|k, v|
         if v.blank?
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
@@ -46,7 +46,6 @@ module Semrush
     def parse(text = "")
       return [] if text.empty?
       csv = CSV.parse(text.to_s, :col_sep => ";")
-      data = {}
       format_key = lambda do |k|
         r = {
           /\s/ => "_",
@@ -71,18 +70,6 @@ module Semrush
         raise CSV::MalformedCSVError.new("Bad format for CSV: #{text.inspect}").tap{|e|
           e.set_backtrace(csvife.backtrace)}
       end
-    end
-
-    def domain?
-      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:domain
-    end
-
-    def url?
-      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:url
-    end
-
-    def phrase?
-      @parameters[:request_type].present? && @request_types.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:phrase
     end
   end
 end
