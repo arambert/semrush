@@ -1,10 +1,10 @@
-Mon, 15 May 2023 16:06:29 +0300
+Mon, 15 May 2023 18:20:49 +0300
 Gemfile	Mon, 15 May 2023 11:55:00 +0300
 MIT-LICENSE	Mon, 15 May 2023 11:55:00 +0300
 README.rdoc	Mon, 15 May 2023 15:58:15 +0300
 Rakefile	Mon, 15 May 2023 11:55:00 +0300
-lib/semrush/analytics.rb	Mon, 15 May 2023 16:06:24 +0300
-lib/semrush/base.rb	Mon, 15 May 2023 15:47:22 +0300
+lib/semrush/analytics.rb	Mon, 15 May 2023 17:54:45 +0300
+lib/semrush/base.rb	Mon, 15 May 2023 17:44:08 +0300
 lib/semrush/exception/api_access_disabled.rb	Mon, 15 May 2023 11:55:00 +0300
 lib/semrush/exception/api_report_type_disabled.rb	Mon, 15 May 2023 11:55:00 +0300
 lib/semrush/exception/api_units_balance_is_zero.rb	Mon, 15 May 2023 11:55:00 +0300
@@ -14,9 +14,9 @@ lib/semrush/exception/bad_query.rb	Mon, 15 May 2023 11:55:00 +0300
 lib/semrush/exception/nothing_found.rb	Mon, 15 May 2023 11:55:00 +0300
 lib/semrush/exception/unknown_error.rb	Mon, 15 May 2023 11:55:00 +0300
 lib/semrush/exception.rb	Mon, 15 May 2023 11:55:00 +0300
-lib/semrush/report.rb	Mon, 15 May 2023 15:58:15 +0300
+lib/semrush/report.rb	Mon, 15 May 2023 17:29:18 +0300
 lib/semrush/version.rb	Mon, 15 May 2023 15:58:15 +0300
-lib/semrush.rb	Mon, 15 May 2023 15:58:15 +0300
+lib/semrush.rb	Mon, 15 May 2023 17:44:44 +0300
 lib/tasks/semrush_tasks.rake	Mon, 15 May 2023 11:55:00 +0300
 spec/semrush/report_spec.rb	Mon, 15 May 2023 11:55:00 +0300
 spec/semrush_spec.rb	Mon, 15 May 2023 11:55:00 +0300

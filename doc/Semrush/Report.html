@@ -167,7 +167,7 @@
 </li></ul>
 
           <div class="method-source-code" id="domain-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">domain</span> <span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {}
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -188,10 +188,11 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-ivar">@parameters</span> = <span class="ruby-identifier">params</span>
   <span class="ruby-ivar">@request_types</span> = <span class="ruby-constant">REQUEST_TYPES</span>
+  <span class="ruby-ivar">@api_report_url</span> = <span class="ruby-constant">API_REPORT_URL</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -221,7 +222,7 @@
 </li></ul>
 
           <div class="method-source-code" id="phrase-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">phrase</span> <span class="ruby-identifier">phrase</span>, <span class="ruby-identifier">params</span> = {}
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">phrase</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -245,7 +246,7 @@
 </li></ul>
 
           <div class="method-source-code" id="remaining_quota-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 66</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">remaining_quota</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-ivar">@remaining_quota_url</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">temp_url</span> = <span class="ruby-node">&quot;#{API_UNITS_URL}&quot;</span> <span class="ruby-comment">#do not copy the constant as is or else the constant would be modified !!</span>
@@ -301,7 +302,7 @@
 </li></ul>
 
           <div class="method-source-code" id="url-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 59</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">url</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span> = {}
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -375,7 +376,7 @@
 </li></ul>
 
           <div class="method-source-code" id="adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 179</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 183</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">adwords</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">url?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url_adwords</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -426,7 +427,7 @@
 </li></ul>
 
           <div class="method-source-code" id="basics-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 111</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 115</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">basics</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">domain?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_rank</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_this</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -460,7 +461,7 @@
 </li></ul>
 
           <div class="method-source-code" id="competitors_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 207</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 211</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_adwords</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_adwords</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -494,7 +495,7 @@
 </li></ul>
 
           <div class="method-source-code" id="competitors_adwords_by_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 231</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 235</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_adwords_by_organic</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_organic</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -528,7 +529,7 @@
 </li></ul>
 
           <div class="method-source-code" id="competitors_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 195</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 199</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_organic</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_organic_organic</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -562,7 +563,7 @@
 </li></ul>
 
           <div class="method-source-code" id="competitors_organic_by_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 219</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 223</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_organic_by_adwords</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_organic_adwords</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -596,7 +597,7 @@
 </li></ul>
 
           <div class="method-source-code" id="fullsearch-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 261</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 265</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fullsearch</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_fullsearch</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -617,7 +618,7 @@
           <p>Ads history for domain or phrase Default columns:</p>
 
           <div class="method-source-code" id="history_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 237</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 241</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">history_adwords</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">domain?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_historical</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_adwords_historical</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -643,7 +644,7 @@
 </li></ul>
 
           <div class="method-source-code" id="kdi-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 271</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 275</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">kdi</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_kdi</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -664,7 +665,7 @@
           
 
           <div class="method-source-code" id="keywords_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 182</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 186</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keywords_adwords</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;[DEPRECATION] `keywords_adwords` is deprecated.  Please use `adwords` instead.&quot;</span>
   <span class="ruby-identifier">adwords</span>(<span class="ruby-identifier">params</span>)
@@ -686,7 +687,7 @@
           
 
           <div class="method-source-code" id="keywords_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 149</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 153</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keywords_organic</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;[DEPRECATION] `keywords_organic` is deprecated.  Please use `organic` instead.&quot;</span>
   <span class="ruby-identifier">organic</span>(<span class="ruby-identifier">params</span>)
@@ -724,6 +725,7 @@
             <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">REPORT_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
   <span class="ruby-identifier">request</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">method</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -794,7 +796,7 @@
 </li></ul>
 
           <div class="method-source-code" id="organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 142</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">organic</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-keyword">case</span>
   <span class="ruby-keyword">when</span> <span class="ruby-identifier">url?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url_organic</span>))
@@ -832,7 +834,7 @@
 </li></ul>
 
           <div class="method-source-code" id="related-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 249</span>
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 253</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">related</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_related</span>))
 <span class="ruby-keyword">end</span></pre>

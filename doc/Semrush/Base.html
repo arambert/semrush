@@ -72,12 +72,9 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-i-domain-3F">#domain?</a>
     <li ><a href="#method-i-error">#error</a>
     <li ><a href="#method-i-parse">#parse</a>
-    <li ><a href="#method-i-phrase-3F">#phrase?</a>
     <li ><a href="#method-i-request">#request</a>
-    <li ><a href="#method-i-url-3F">#url?</a>
   </ul>
 </div>
 
@@ -105,27 +102,6 @@
        <header>
          <h3>Public Instance Methods</h3>
        </header>
-
-      <div id="method-i-domain-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">domain?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="domain-3F-source">
-            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 76</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">domain?</span>
-  <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@request_types</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span><span class="ruby-operator">==</span><span class="ruby-value">:domain</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
 
       <div id="method-i-error" class="method-detail ">
         <div class="method-heading">
@@ -176,7 +152,6 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;&quot;</span>)
   <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
   <span class="ruby-identifier">csv</span> = <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value">:col_sep</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;;&quot;</span>)
-  <span class="ruby-identifier">data</span> = {}
   <span class="ruby-identifier">format_key</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">r</span> = {
       <span class="ruby-regexp">/\s/</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;_&quot;</span>,
@@ -208,27 +183,6 @@
 
       </div>
 
-      <div id="method-i-phrase-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">phrase?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="phrase-3F-source">
-            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 84</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">phrase?</span>
-  <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@request_types</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span><span class="ruby-operator">==</span><span class="ruby-value">:phrase</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-i-request" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">request</span><span
@@ -243,7 +197,7 @@
             <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-identifier">validate_parameters</span> <span class="ruby-identifier">params</span>
-  <span class="ruby-identifier">temp_url</span> = <span class="ruby-node">&quot;#{API_REPORT_URL}&quot;</span> <span class="ruby-comment">#do not copy the constant as is or else the constant would be modified !!</span>
+  <span class="ruby-identifier">temp_url</span> = <span class="ruby-node">&quot;#{@api_report_url}&quot;</span> <span class="ruby-comment">#do not copy the constant as is or else the constant would be modified !!</span>
   <span class="ruby-ivar">@parameters</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span>
       <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/&amp;[^&amp;=]+=%#{k.to_s}%/i</span>, <span class="ruby-string">&#39;&#39;</span>)
@@ -263,27 +217,6 @@
   <span class="ruby-identifier">output</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">starts_with?</span>(<span class="ruby-string">&quot;ERROR&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">response</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">response</span>)
   <span class="ruby-constant">Semrush</span>.<span class="ruby-identifier">after</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:url</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>), <span class="ruby-identifier">output</span>)
   <span class="ruby-identifier">output</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-url-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">url?</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="url-3F-source">
-            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 80</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">url?</span>
-  <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@request_types</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@parameters</span>[<span class="ruby-value">:request_type</span>].<span class="ruby-identifier">to_sym</span><span class="ruby-operator">==</span><span class="ruby-value">:url</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

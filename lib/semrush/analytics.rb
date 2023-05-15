@@ -24,6 +24,8 @@ module Semrush
     # * :offset (ex: :offset => "")
     # * :target_type (ex: :target_type => "") One of `REQUEST_TYPES`
     # * :export_columns (ex: :export_columns => "")
+    # * :display_filter one or many of "zone, country, ip, newdomain, lostdomain, category"
+    # See: https://developer.semrush.com/api/v3/analytics/backlinks/#reffering_domains
     def self.backlinks_refdomains domain, params = {}
       export_columns = params.delete(:export_columns).presence ||
         "domain_ascore,domain,backlinks_num,ip,country,first_seen,last_seen"

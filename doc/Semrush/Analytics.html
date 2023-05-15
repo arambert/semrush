@@ -74,7 +74,6 @@
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-backlinks_refdomains">::backlinks_refdomains</a>
     <li ><a href="#method-c-new">::new</a>
-    <li class="calls-super" ><a href="#method-i-method_missing">#method_missing</a>
   </ul>
 </div>
 
@@ -145,13 +144,23 @@
 </li><li>
 <p>:offset (ex: :offset =&gt; “”)</p>
 </li><li>
+<p>:target_type (ex: :target_type =&gt; “”) One of ‘REQUEST_TYPES`</p>
+</li><li>
 <p>:export_columns (ex: :export_columns =&gt; “”)</p>
+</li><li>
+<p>:display_filter one or many of “zone, country, ip, newdomain, lostdomain, category”</p>
 </li></ul>
 
+<p>See: <a href="https://developer.semrush.com/api/v3/analytics/backlinks/#reffering_domains">developer.semrush.com/api/v3/analytics/backlinks/#reffering_domains</a></p>
+
           <div class="method-source-code" id="backlinks_refdomains-source">
-            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_refdomains</span> <span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_refdomains</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>))
+  <span class="ruby-identifier">export_columns</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:export_columns</span>).<span class="ruby-identifier">presence</span> <span class="ruby-operator">||</span>
+    <span class="ruby-string">&quot;domain_ascore,domain,backlinks_num,ip,country,first_seen,last_seen&quot;</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_refdomains</span>, <span class="ruby-value">:target</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>,
+                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>)).<span class="ruby-identifier">request</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -170,43 +179,11 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-ivar">@parameters</span> = <span class="ruby-identifier">params</span>
-  <span class="ruby-ivar">@request_types</span> = <span class="ruby-constant">REQUEST_TYPES</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-method_missing" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">method_missing</span><span
-            class="method-args">(method, *args)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Tries to make the api call for the report called as method (see samples on <a href="http://www.semrush.com/api.html">www.semrush.com/api.html</a>).</p>
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
-
-          <div class="method-source-code" id="method_missing-source">
-            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">ANALYTIC_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
-  <span class="ruby-identifier">request</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">method</span>)
+  <span class="ruby-ivar">@target_types</span> = <span class="ruby-constant">REQUEST_TYPES</span>
+  <span class="ruby-ivar">@api_report_url</span> = <span class="ruby-constant">API_ANALYTICS_URL</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
