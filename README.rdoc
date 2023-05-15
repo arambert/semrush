@@ -70,6 +70,9 @@ or
   report = Semrush::Report.domain("seobook.com")
   data = report.basics(:db => 'us', :limit => 100)
 
+or
+  analytics = Semrush::Analytics.backlinks_refdomains("seobook.com")
+
 You will find more information about these parameters at http://www.semrush.com/api.html
 
 == Reports
@@ -100,6 +103,10 @@ You may call for one of the following report types:
 For more information about the report types, please read http://www.semrush.com/api.html
 
 == ChangeLog
+
+=== 3.0.24, 2023-05-15
+
+* Added Analytics class for the new Analytics API, not covered all the reports yet
 
 === 3.0.23, 2020-03-19
 

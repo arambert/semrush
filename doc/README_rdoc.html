@@ -2,123 +2,131 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>Gemfile</title>
-
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<title>README - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
 
 
-<body class="file">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
+    </div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Semrush">Semrush</a>
+    <li><a href="#label-Requirements">Requirements</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Getting+started">Getting started</a>
+    <li><a href="#label-Parameters">Parameters</a>
+    <li><a href="#label-Reports">Reports</a>
+    <li><a href="#label-Source+of+reports">Source of reports</a>
+    <li><a href="#label-Report+types">Report types</a>
+    <li><a href="#label-ChangeLog">ChangeLog</a>
+    <li><a href="#label-3.0.24-2C+2023-05-15">3.0.24, 2023-05-15</a>
+    <li><a href="#label-3.0.23-2C+2020-03-19">3.0.23, 2020-03-19</a>
+    <li><a href="#label-3.0.22-2C+2019-06-14">3.0.22, 2019-06-14</a>
+    <li><a href="#label-3.0.21-2C+2018-04-14">3.0.21, 2018-04-14</a>
+    <li><a href="#label-3.0.20-2C+2017-03-16">3.0.20, 2017-03-16</a>
+    <li><a href="#label-3.0.19-2C+2016-01-16">3.0.19, 2016-01-16</a>
+    <li><a href="#label-3.0.18-2C+2014-10-03">3.0.18, 2014-10-03</a>
+    <li><a href="#label-3.0.17-2C+2014-08-01">3.0.17, 2014-08-01</a>
+    <li><a href="#label-3.0.16-2C+2014-07-21">3.0.16, 2014-07-21</a>
+    <li><a href="#label-3.0.15-2C+2013-06-26">3.0.15, 2013-06-26</a>
+    <li><a href="#label-3.0.14-2C+2013-06-10">3.0.14, 2013-06-10</a>
+    <li><a href="#label-3.0.13-2C+2013-06-10">3.0.13, 2013-06-10</a>
+    <li><a href="#label-3.0.12-2C+2013-05-31">3.0.12, 2013-05-31</a>
+    <li><a href="#label-3.0.11-2C+2013-05-22">3.0.11, 2013-05-22</a>
+    <li><a href="#label-3.0.10-2C+2013-05-21">3.0.10, 2013-05-21</a>
+    <li><a href="#label-3.0.9-2C+2013-05-21">3.0.9, 2013-05-21</a>
+    <li><a href="#label-3.0.8-2C+2013-05-21">3.0.8, 2013-05-21</a>
+    <li><a href="#label-3.0.7-2C+2013-05-21">3.0.7, 2013-05-21</a>
+    <li><a href="#label-3.0.6-2C+2013-05-7">3.0.6, 2013-05-7</a>
+    <li><a href="#label-About+authors">About authors</a>
+  </ul>
+</div>
 
 
   <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Gemfile.html">Gemfile</a>
-  
-    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
-  
-    <li class="file"><a href="./README_rdoc.html">README</a>
-  
-    <li class="file"><a href="./Rakefile.html">Rakefile</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
 
   <ul class="link-list">
-  
-    <li><a href="./Semrush.html">Semrush</a>
-  
-    <li><a href="./Semrush/Exception.html">Semrush::Exception</a>
-  
-    <li><a href="./Semrush/Exception/ApiAccessDisabled.html">Semrush::Exception::ApiAccessDisabled</a>
-  
-    <li><a href="./Semrush/Exception/BadApiKey.html">Semrush::Exception::BadApiKey</a>
-  
-    <li><a href="./Semrush/Exception/BadArgument.html">Semrush::Exception::BadArgument</a>
-  
-    <li><a href="./Semrush/Exception/BadQuery.html">Semrush::Exception::BadQuery</a>
-  
-    <li><a href="./Semrush/Exception/Base.html">Semrush::Exception::Base</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterDomainNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterDomainNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterPhraseNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterPhraseNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterUrlNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterUrlNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/NothingFound.html">Semrush::Exception::NothingFound</a>
-  
-    <li><a href="./Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
-  
-    <li><a href="./Semrush/Exception/WrongFormatOrEmptyKey.html">Semrush::Exception::WrongFormatOrEmptyKey</a>
-  
-    <li><a href="./Semrush/Report.html">Semrush::Report</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
+    <li><a href="./Gemfile.html">Gemfile</a>
+    <li><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+    <li><a href="./README_rdoc.html">README</a>
+    <li><a href="./Rakefile.html">Rakefile</a>
+    <li><a href="./lib/tasks/semrush_tasks_rake.html">semrush_tasks.rake</a>
   </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation" class="description">
-  
-<h1 id="label-Semrush"><a href="Semrush.html">Semrush</a></h1>
+<main role="main" aria-label="Page README.rdoc">
 
-<p><a href="Semrush.html">Semrush</a> is a ruby wrapper for the SEMRush API.</p>
+<h1 id="label-Semrush"><a href="Semrush.html"><code>Semrush</code></a><span><a href="#label-Semrush">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h2 id="label-Requirements">Requirements</h2>
+<p><a href="Semrush.html"><code>Semrush</code></a> is a ruby wrapper for the SEMRush API.</p>
+
+<h2 id="label-Requirements">Requirements<span><a href="#label-Requirements">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
-<p>Ruby 1.9</p>
+<p>Ruby 1.9 or 2.x</p>
 </li><li>
-<p>ActiveSupport (tested with ActiveSupport 3.1)</p>
+<p>ActiveSupport</p>
 </li></ul>
 
-<h2 id="label-Installation">Installation</h2>
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Add the gem to your Gemfile:</p>
 
-<pre>gem install semrush</pre>
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">semrush</span>
+</pre>
 
 <p>Create an initializer, for instance semrush.rb with the following:</p>
 
@@ -129,92 +137,216 @@
 
 <p>Replace ‘7899esf6874’ with your SEMRush api key.</p>
 
-<h2 id="label-Getting+started">Getting started</h2>
+<p>You may also use the following parameters in config:</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">before</span> = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">params</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">params</span>}            <span class="ruby-comment"># (Proc or lambda) will be called before the call to SemRush (even if this return false it still runs the request)</span>
+<span class="ruby-identifier">config</span>.<span class="ruby-identifier">after</span>  = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">params</span>, <span class="ruby-identifier">results</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">results</span>}  <span class="ruby-comment"># (Proc or lambda) will be called after the call to SemRush (if the call returns an exception, this will not be executed)</span>
+</pre>
+
+<h2 id="label-Getting+started">Getting started<span><a href="#label-Getting+started">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>First, create a report for a domain, a URL or a phrase with:</p>
 
-<pre>report = Semrush::Report.domain(&quot;seobook.com&quot;)                 # for the &quot;seobook.com&quot; domain
-report = Semrush::Report.url(&quot;http://tools.seobook.com/&quot;)      # for the &quot;http://tools.seobook.com/&quot; url
-report = Semrush::Report.phrase(&quot;search+engine+optimization&quot;)  # for the &quot;search+engine+optimization&quot; phrase</pre>
+<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>)                 <span class="ruby-comment"># for the &quot;seobook.com&quot; domain</span>
+<span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">url</span>(<span class="ruby-string">&quot;http://tools.seobook.com/&quot;</span>)      <span class="ruby-comment"># for the &quot;http://tools.seobook.com/&quot; url</span>
+<span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">phrase</span>(<span class="ruby-string">&quot;search+engine+optimization&quot;</span>)  <span class="ruby-comment"># for the &quot;search+engine+optimization&quot; phrase</span>
+</pre>
 
 <p>Then run the report type you need:</p>
 
-<pre>basic_data = report.basics</pre>
+<pre class="ruby"><span class="ruby-identifier">basic_data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>
+</pre>
 
 <p>or</p>
 
-<pre>keywords_data = report.keywords_organic</pre>
+<pre class="ruby"><span class="ruby-identifier">keywords_data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">keywords_organic</span>
+</pre>
 
-<h2 id="label-Parameters">Parameters</h2>
+<p>If you want to know your remaining api units:</p>
+
+<pre class="ruby"><span class="ruby-identifier">units</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">remaining_quota</span>
+</pre>
+
+<h2 id="label-Parameters">Parameters<span><a href="#label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>You may use the following parameters:</p>
 
-<pre class="ruby">:<span class="ruby-identifier">db</span>         <span class="ruby-comment"># (String) select the google engine ('us' for google.comn 'fr' for google.fr)</span>
-:<span class="ruby-identifier">api_key</span>    <span class="ruby-comment"># (String) change the api_key</span>
-:<span class="ruby-identifier">limit</span>      <span class="ruby-comment"># (Integer) select only the first 'limit' entries</span>
-:<span class="ruby-identifier">offset</span>     <span class="ruby-comment"># (Integer) skip the first 'offset' entries</span>
-:<span class="ruby-identifier">export_columns</span> <span class="ruby-comment"># (String) select the columns you want to fetch, for instance: :export_columns =&gt; &quot;Dn,Rk&quot;</span>
+<pre class="ruby"><span class="ruby-value">:db</span>         <span class="ruby-comment"># (String) select the google engine (&#39;us&#39; for google.com &#39;fr&#39; for google.fr)</span>
+<span class="ruby-value">:api_key</span>    <span class="ruby-comment"># (String) change the api_key</span>
+<span class="ruby-value">:limit</span>      <span class="ruby-comment"># (Integer) select only the first &#39;limit&#39; entries (This parameter is required in order to avoid uncontrolled heavy usage)</span>
+<span class="ruby-value">:offset</span>     <span class="ruby-comment"># (Integer) skip the first &#39;offset&#39; entries</span>
+<span class="ruby-value">:export_columns</span> <span class="ruby-comment"># (String) select the columns you want to fetch, for instance: :export_columns =&gt; &quot;Dn,Rk&quot;</span>
+<span class="ruby-value">:display_sort</span>   <span class="ruby-comment"># (String) select the column and the order you want to sort with, for instance: :display_sort =&gt; &#39;tr_asc&#39;</span>
+<span class="ruby-value">:display_filter</span> <span class="ruby-comment"># (String) list of filters for the report, separated by &#39;|&#39; (maximum number - 25). A filter consists of &lt;sign&gt;|&lt;field&gt;|&lt;operation&gt;|&lt;value&gt; (read http://www.semrush.com/api), for instance: :display_filter =&gt; &#39;+|Po|Lt|5&#39;</span>
+<span class="ruby-value">:display_date</span>   <span class="ruby-comment"># (String) select the date for the report data, in the format: YYYYMM15</span>
 </pre>
 
 <p>Some examples:</p>
 
-<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>, :<span class="ruby-identifier">db</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'us'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>)
+<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>, <span class="ruby-value">:db</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;us&#39;</span>, <span class="ruby-value">:limit</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">100</span>)
 <span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>
 </pre>
 
 <p>or</p>
 
 <pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>)
-<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>(:<span class="ruby-identifier">db</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'us'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>)
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>(<span class="ruby-value">:db</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;us&#39;</span>, <span class="ruby-value">:limit</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">100</span>)
 </pre>
 
-<p>You will find more information about these parameters at <a
-href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
+<p>or</p>
 
-<h2 id="label-Reports">Reports</h2>
+<pre class="ruby"><span class="ruby-identifier">analytics</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Analytics</span>.<span class="ruby-identifier">backlinks_refdomains</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>)
+</pre>
 
-<h3 id="label-Source+of+reports">Source of reports</h3>
+<p>You will find more information about these parameters at <a href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
+
+<h2 id="label-Reports">Reports<span><a href="#label-Reports">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Source+of+reports">Source of reports<span><a href="#label-Source+of+reports">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>They are 3 sources for the reports: domain, url and phrase.</p>
 
-<pre>report = Semrush::Report.domain(&quot;seobook.com&quot;)                 # for the &quot;seobook.com&quot; domain
-report = Semrush::Report.url(&quot;http://tools.seobook.com/&quot;)      # for the &quot;http://tools.seobook.com/&quot; url
-report = Semrush::Report.phrase(&quot;search+engine+optimization&quot;)  # for the &quot;search+engine+optimization&quot; phrase</pre>
+<pre class="ruby"><span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">domain</span>(<span class="ruby-string">&quot;seobook.com&quot;</span>)                 <span class="ruby-comment"># for the &quot;seobook.com&quot; domain</span>
+<span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">url</span>(<span class="ruby-string">&quot;http://tools.seobook.com/&quot;</span>)      <span class="ruby-comment"># for the &quot;http://tools.seobook.com/&quot; url</span>
+<span class="ruby-identifier">report</span> = <span class="ruby-constant">Semrush</span><span class="ruby-operator">::</span><span class="ruby-constant">Report</span>.<span class="ruby-identifier">phrase</span>(<span class="ruby-string">&quot;search+engine+optimization&quot;</span>)  <span class="ruby-comment"># for the &quot;search+engine+optimization&quot; phrase</span>
+</pre>
 
-<h3 id="label-Report+types">Report types</h3>
+<h3 id="label-Report+types">Report types<span><a href="#label-Report+types">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>You may call for one of the following report types:</p>
 
-<pre>data = report.basics                          # main report for either a domain or a phrase
-data = report.keywords_organic                # keywords organic report for either a domain or a URL
-data = report.keywords_adwords                # keywords adwords report for either a domain or a URL
-data = report.competitors_organic             # for a domain
-data = report.competitors_adwords             # for a domain
-data = report.competitors_organic_by_adwords  # for a domain
-data = report.competitors_adwords_by_organic  # for a domain
-data = report.related                         # keywords related report for a phrase</pre>
+<pre class="ruby"><span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">basics</span>                          <span class="ruby-comment"># main report for either a domain or a phrase</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">organic</span>                         <span class="ruby-comment"># organic report for either a domain, a URL or a phrase</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">adwords</span>                         <span class="ruby-comment"># adwords report for either a domain or a URL</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">competitors_organic</span>             <span class="ruby-comment"># for a domain</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">competitors_adwords</span>             <span class="ruby-comment"># for a domain</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">competitors_organic_by_adwords</span>  <span class="ruby-comment"># for a domain</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">competitors_adwords_by_organic</span>  <span class="ruby-comment"># for a domain</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">related</span>                         <span class="ruby-comment"># keywords related report for a phrase</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">fullsearch</span>                      <span class="ruby-comment"># phrase fullsearch report</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-identifier">report</span>.<span class="ruby-identifier">history_adwords</span>                 <span class="ruby-comment"># ads history for either a domain or a phrase</span>
+</pre>
 
-<p>For more information about the report types, please read <a
-href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
+<p>For more information about the report types, please read <a href="http://www.semrush.com/api.html">www.semrush.com/api.html</a></p>
 
-<h2 id="label-About+authors">About authors</h2>
+<h2 id="label-ChangeLog">ChangeLog<span><a href="#label-ChangeLog">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>This gem is inspired by the work of Cramer Development for the
-semrush-client plugin (<a
-href="https://github.com/cramerdev/semrush-client">github.com/cramerdev/semrush-client</a>).</p>
+<h3 id="label-3.0.24-2C+2023-05-15">3.0.24, 2023-05-15<span><a href="#label-3.0.24-2C+2023-05-15">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added Analytics class for the new Analytics API, not covered all the reports yet</p>
+</li></ul>
 
-<p>It has been rewritten and gemified for the internal use in Weboglobin (<a
-href="http://fr.weboglobin.com">fr.weboglobin.com</a>).</p>
+<h3 id="label-3.0.23-2C+2020-03-19">3.0.23, 2020-03-19<span><a href="#label-3.0.23-2C+2020-03-19">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add New Zealand ‘nz’ to allowed databases (countries)</p>
+</li></ul>
+
+<h3 id="label-3.0.22-2C+2019-06-14">3.0.22, 2019-06-14<span><a href="#label-3.0.22-2C+2019-06-14">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add India to the list of allowed countries</p>
+</li></ul>
+
+<h3 id="label-3.0.21-2C+2018-04-14">3.0.21, 2018-04-14<span><a href="#label-3.0.21-2C+2018-04-14">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Move to SSL (https)</p>
+</li></ul>
+
+<h3 id="label-3.0.20-2C+2017-03-16">3.0.20, 2017-03-16<span><a href="#label-3.0.20-2C+2017-03-16">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add Phrase KDI support</p>
+</li></ul>
+
+<h3 id="label-3.0.19-2C+2016-01-16">3.0.19, 2016-01-16<span><a href="#label-3.0.19-2C+2016-01-16">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix map bug with filtered organic report that has no results</p>
+</li></ul>
+
+<h3 id="label-3.0.18-2C+2014-10-03">3.0.18, 2014-10-03<span><a href="#label-3.0.18-2C+2014-10-03">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add new databases (countries)</p>
+</li></ul>
+
+<h3 id="label-3.0.17-2C+2014-08-01">3.0.17, 2014-08-01<span><a href="#label-3.0.17-2C+2014-08-01">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Remove Pony dependency</p>
+</li></ul>
+
+<h3 id="label-3.0.16-2C+2014-07-21">3.0.16, 2014-07-21<span><a href="#label-3.0.16-2C+2014-07-21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add support for fullsearch reports</p>
+</li><li>
+<p>Add support for Adwords history reports</p>
+</li></ul>
+
+<h3 id="label-3.0.15-2C+2013-06-26">3.0.15, 2013-06-26<span><a href="#label-3.0.15-2C+2013-06-26">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>activesupport dependency to &gt;= 3.2.0 to support rails 4</p>
+</li></ul>
+
+<h3 id="label-3.0.14-2C+2013-06-10">3.0.14, 2013-06-10<span><a href="#label-3.0.14-2C+2013-06-10">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>parameter ‘display_filter’ has to be url-encoded in a separate way</p>
+</li></ul>
+
+<h3 id="label-3.0.13-2C+2013-06-10">3.0.13, 2013-06-10<span><a href="#label-3.0.13-2C+2013-06-10">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add report type ‘phrase_oganic’</p>
+</li><li>
+<p>Add parameter ‘display_sort’</p>
+</li><li>
+<p>Add parameter ‘display_filter’</p>
+</li></ul>
+
+<h3 id="label-3.0.12-2C+2013-05-31">3.0.12, 2013-05-31<span><a href="#label-3.0.12-2C+2013-05-31">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Force parameter ‘limit’ &gt; 0 to prevent limit=0</p>
+</li></ul>
+
+<h3 id="label-3.0.11-2C+2013-05-22">3.0.11, 2013-05-22<span><a href="#label-3.0.11-2C+2013-05-22">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix parameters accessible through Semrush.before &amp; Semrush.after</p>
+</li></ul>
+
+<h3 id="label-3.0.10-2C+2013-05-21">3.0.10, 2013-05-21<span><a href="#label-3.0.10-2C+2013-05-21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix remaining_quota (problem with redirections)</p>
+</li></ul>
+
+<h3 id="label-3.0.9-2C+2013-05-21">3.0.9, 2013-05-21<span><a href="#label-3.0.9-2C+2013-05-21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add url in parameters accessible through Semrush.before &amp; Semrush.after</p>
+</li></ul>
+
+<h3 id="label-3.0.8-2C+2013-05-21">3.0.8, 2013-05-21<span><a href="#label-3.0.8-2C+2013-05-21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Move after &amp; before callbacks to <a href="Semrush.html"><code>Semrush</code></a> module: Semrush.before &amp; Semrush.after</p>
+</li></ul>
+
+<h3 id="label-3.0.7-2C+2013-05-21">3.0.7, 2013-05-21<span><a href="#label-3.0.7-2C+2013-05-21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add after &amp; before callbacks</p>
+</li></ul>
+
+<h3 id="label-3.0.6-2C+2013-05-7">3.0.6, 2013-05-7<span><a href="#label-3.0.6-2C+2013-05-7">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add method remaining_quota</p>
+</li></ul>
+
+<h2 id="label-About+authors">About authors<span><a href="#label-About+authors">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>This gem is inspired by the work of Cramer Development for the semrush-client plugin (<a href="https://github.com/cramerdev/semrush-client">github.com/cramerdev/semrush-client</a>).</p>
+
+<p>It has been rewritten and gemified for the internal use in Weboglobin (<a href="http://fr.weboglobin.com">fr.weboglobin.com</a>).</p>
 
 <p>This project rocks and uses MIT-LICENSE.</p>
 
-</div>
+</main>
 
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

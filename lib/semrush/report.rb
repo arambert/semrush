@@ -6,13 +6,12 @@ module Semrush
   # * :limit (ex: :limit => 2000)
   # * :offset (ex: :offset => 5)
   # * :export_columns (ex: :export_columns => "Dn,Rk")
-  class Report
+  class Report < Base
     DBS = [:us, :uk, :ca, :ru, :de, :fr, :es, :it, :br, :au, :ar, :be, :ch, :dk, :fi, :hk, :ie, :il, :mx, :nl, :no, :pl, :se, :sg, :tr, :in, :nz] #"us" - for Google.com, "uk" - for Google.co.uk, "ru" - for Google.ru, "de" for Google.de, "fr" for Google.fr, "es" for Google.es, "it" for Google.it Beta, "br" for Google.com.br Beta, "au" for Google.com.au Beta, etc
     REPORT_TYPES = [:domain_rank, :domain_organic, :domain_adwords, :domain_organic_organic, :domain_adwords_adwords, :domain_organic_adwords, :domain_adwords_organic, :domain_adwords_historical,
                     :phrase_this, :phrase_organic, :phrase_related, :phrase_adwords_historical, :phrase_fullsearch, :phrase_kdi,
                     :url_organic, :url_adwords]
     REQUEST_TYPES = [:domain, :phrase, :url]
-
 
     # Tries to make the api call for the report called as method (see samples on http://www.semrush.com/api.html).
     # Allows calls like:
@@ -27,6 +26,7 @@ module Semrush
 
     def initialize params = {}
       @parameters = params
+      @request_types = REQUEST_TYPES
     end
 
     # Initializes a report for a specific domain.
@@ -261,7 +261,7 @@ module Semrush
     def fullsearch params = {}
       request(params.merge(:report_type => :phrase_fullsearch))
     end
-    
+
     # Keyword Difficulty report
     # Usage:
     # > report = Semrush::Report.phrase(phrases.join(';'), database: 'us', limit: 100).kdi
@@ -273,30 +273,6 @@ module Semrush
     end
 
     private
-
-    def request params = {}
-      validate_parameters params
-      temp_url = "#{API_REPORT_URL}" #do not copy the constant as is or else the constant would be modified !!
-      @parameters.each {|k, v|
-        if v.blank?
-          temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
-        elsif k.to_sym==:display_filter
-          temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
-        else
-          temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26'))
-        end
-      }
-      puts "[Semrush query] URL: #{temp_url}" if Semrush.debug
-      url = URI.parse(temp_url)
-      Semrush.before.call(@parameters.merge(:url => url))
-      response = Net::HTTP.start(url.host, url.port, :use_ssl => true) {|http|
-        http.get(url.path+"?"+url.query)
-      }.body rescue "ERROR :: RESPONSE ERROR (-1)" # Make this error up
-      response.force_encoding("utf-8")
-      output = response.starts_with?("ERROR") ? error(response) : parse(response)
-      Semrush.after.call(@parameters.merge(:url => url), output)
-      output
-    end
 
     # All parameters:
     # * db - requested database
@@ -323,65 +299,5 @@ module Semrush
       raise Semrush::Exception::BadArgument.new(self, "Bad report type: #{@parameters[:report_type]}") unless REPORT_TYPES.include?(@parameters[:report_type].try(:to_sym))
       raise Semrush::Exception::BadArgument.new(self, "Bad request type: #{@parameters[:request_type]}") unless REQUEST_TYPES.include?(@parameters[:request_type].try(:to_sym))
     end
-
-    # Format and raise an error
-    def error(text = "")
-      e = /ERROR\s(\d+)\s::\s(.*)/.match(text) || {}
-      name = (e[2] || "UnknownError").titleize
-      code = e[1] || -1
-      error_class = name.gsub(/\s/, "")
-
-      if error_class == "NothingFound"
-        []
-      else
-        begin
-          raise Semrush::Exception.const_get(error_class).new(self, "#{name} (#{code})")
-        rescue
-          raise Semrush::Exception::Base.new(self, "#{name} (#{code}) *** error_class=#{error_class} not implemented ***")
-        end
-      end
-    end
-
-    def parse(text = "")
-      return [] if text.empty?
-      csv = CSV.parse(text.to_s, :col_sep => ";")
-      data = {}
-      format_key = lambda do |k|
-        r = {
-          /\s/ => "_",
-          /[|\.|\)|\(]/ => "",
-          /%/ => "percent",
-          /\*/ => "times"
-        }
-        k = k.to_s.downcase
-        r.each_pair {|pattern, replace| k.gsub!(pattern, replace) }
-        k.to_sym
-      end
-
-      # (thanks http://snippets.dzone.com/posts/show/3899)
-      keys = csv.shift.map(&format_key)
-      string_data = csv.map {|row| row.map {|cell| cell.to_s } }
-      string_data.map {|row| Hash[*keys.zip(row).flatten] }
-    rescue CSV::MalformedCSVError => csvife
-      tries ||= 0
-      if (tries += 1) < 3
-        retry
-      else
-        raise CSV::MalformedCSVError.new("Bad format for CSV: #{text.inspect}").tap{|e|
-          e.set_backtrace(csvife.backtrace)}
-      end
-    end
-
-    def domain?
-      @parameters[:request_type].present? && REQUEST_TYPES.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:domain
-    end
-    def url?
-      @parameters[:request_type].present? && REQUEST_TYPES.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:url
-    end
-    def phrase?
-      @parameters[:request_type].present? && REQUEST_TYPES.include?(@parameters[:request_type].to_sym) && @parameters[:request_type].to_sym==:phrase
-    end
-
-
   end
 end

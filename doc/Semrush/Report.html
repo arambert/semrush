@@ -2,172 +2,111 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>Class: Semrush::Report</title>
-
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+<title>class Semrush::Report - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
     <a href="../table_of_contents.html#classes">Classes</a>
     <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/semrush/report.rb
-  </ul>
-</nav>
-
-    
   </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link"><a href="../Object.html">Object</a>
-  
-</nav>
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Base.html">Semrush::Base</a>
+</div>
 
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
-    
-    <li><a href="#method-c-domain">::domain</a>
-    
-    <li><a href="#method-c-new">::new</a>
-    
-    <li><a href="#method-c-phrase">::phrase</a>
-    
-    <li><a href="#method-c-url">::url</a>
-    
-    <li><a href="#method-i-basics">#basics</a>
-    
-    <li><a href="#method-i-competitors_adwords">#competitors_adwords</a>
-    
-    <li><a href="#method-i-competitors_adwords_by_organic">#competitors_adwords_by_organic</a>
-    
-    <li><a href="#method-i-competitors_organic">#competitors_organic</a>
-    
-    <li><a href="#method-i-competitors_organic_by_adwords">#competitors_organic_by_adwords</a>
-    
-    <li><a href="#method-i-keywords_adwords">#keywords_adwords</a>
-    
-    <li><a href="#method-i-keywords_organic">#keywords_organic</a>
-    
-    <li><a href="#method-i-method_missing">#method_missing</a>
-    
-    <li><a href="#method-i-related">#related</a>
-    
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-domain">::domain</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-c-phrase">::phrase</a>
+    <li ><a href="#method-c-remaining_quota">::remaining_quota</a>
+    <li ><a href="#method-c-url">::url</a>
+    <li ><a href="#method-i-adwords">#adwords</a>
+    <li ><a href="#method-i-basics">#basics</a>
+    <li ><a href="#method-i-competitors_adwords">#competitors_adwords</a>
+    <li ><a href="#method-i-competitors_adwords_by_organic">#competitors_adwords_by_organic</a>
+    <li ><a href="#method-i-competitors_organic">#competitors_organic</a>
+    <li ><a href="#method-i-competitors_organic_by_adwords">#competitors_organic_by_adwords</a>
+    <li ><a href="#method-i-fullsearch">#fullsearch</a>
+    <li ><a href="#method-i-history_adwords">#history_adwords</a>
+    <li ><a href="#method-i-kdi">#kdi</a>
+    <li ><a href="#method-i-keywords_adwords">#keywords_adwords</a>
+    <li ><a href="#method-i-keywords_organic">#keywords_organic</a>
+    <li class="calls-super" ><a href="#method-i-method_missing">#method_missing</a>
+    <li ><a href="#method-i-organic">#organic</a>
+    <li ><a href="#method-i-related">#related</a>
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../Gemfile.html">Gemfile</a>
-  
-    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
-  
-    <li class="file"><a href="../README_rdoc.html">README</a>
-  
-    <li class="file"><a href="../Rakefile.html">Rakefile</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../Semrush.html">Semrush</a>
-  
-    <li><a href="../Semrush/Exception.html">Semrush::Exception</a>
-  
-    <li><a href="../Semrush/Exception/ApiAccessDisabled.html">Semrush::Exception::ApiAccessDisabled</a>
-  
-    <li><a href="../Semrush/Exception/BadApiKey.html">Semrush::Exception::BadApiKey</a>
-  
-    <li><a href="../Semrush/Exception/BadArgument.html">Semrush::Exception::BadArgument</a>
-  
-    <li><a href="../Semrush/Exception/BadQuery.html">Semrush::Exception::BadQuery</a>
-  
-    <li><a href="../Semrush/Exception/Base.html">Semrush::Exception::Base</a>
-  
-    <li><a href="../Semrush/Exception/MandatoryParameterDomainNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterDomainNotSetOrEmtpy</a>
-  
-    <li><a href="../Semrush/Exception/MandatoryParameterPhraseNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterPhraseNotSetOrEmtpy</a>
-  
-    <li><a href="../Semrush/Exception/MandatoryParameterUrlNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterUrlNotSetOrEmtpy</a>
-  
-    <li><a href="../Semrush/Exception/NothingFound.html">Semrush::Exception::NothingFound</a>
-  
-    <li><a href="../Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
-  
-    <li><a href="../Semrush/Exception/WrongFormatOrEmptyKey.html">Semrush::Exception::WrongFormatOrEmptyKey</a>
-  
-    <li><a href="../Semrush/Report.html">Semrush::Report</a>
-  
-    <li><a href="../Object.html">Object</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Semrush::Report</h1>
+<main role="main" aria-labelledby="class-Semrush::Report">
+  <h1 id="class-Semrush::Report" class="class">
+    class Semrush::Report
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-<h1 id="label-Report+Class"><a href="Report.html">Report</a> Class</h1>
+<h1 id="class-Semrush::Report-label-Report+Class"><a href="Report.html"><code>Report</code></a> Class<span><a href="#class-Semrush::Report-label-Report+Class">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Most of these methods take a hash parameter that may contain the following
-keys :</p>
+<p>Most of these methods take a hash parameter that may contain the following keys :</p>
 <ul><li>
 <p>:db (ex: :db =&gt; “us”)</p>
 </li><li>
@@ -180,62 +119,41 @@ keys :</p>
 <p>:export_columns (ex: :export_columns =&gt; “Dn,Rk”)</p>
 </li></ul>
 
-  </div><!-- description -->
+  </section>
 
-  
-  
-  
   <section id="5Buntitled-5D" class="documentation-section">
-    
 
-    
 
-    
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
-      
         <dt id="DBS">DBS
-        
-        <dd class="description">
-        
-      
+        <dd>
         <dt id="REPORT_TYPES">REPORT_TYPES
-        
-        <dd class="description">
-        
-      
+        <dd>
         <dt id="REQUEST_TYPES">REQUEST_TYPES
-        
-        <dd class="description">
-        
-      
+        <dd>
       </dl>
     </section>
-    
 
-    
 
-    <!-- Methods -->
-    
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
 
-    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
       <div id="method-c-domain" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">domain</span><span
             class="method-args">(domain, params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
-          <p>Initializes a report for a specific domain. Takes a hash parameter that may
-contain the following keys :</p>
+          <p>Initializes a report for a specific domain. Takes a hash parameter that may contain the following keys :</p>
 <ul><li>
 <p>:db (ex: :db =&gt; “us”)</p>
 </li><li>
@@ -247,67 +165,49 @@ contain the following keys :</p>
 </li><li>
 <p>:export_columns (ex: :export_columns =&gt; “”)</p>
 </li></ul>
-          
 
-          
           <div class="method-source-code" id="domain-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 38</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span> <span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain</span>, <span class="ruby-value">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">domain</span>))
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">domain</span> <span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- domain-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- domain-method -->
+      </div>
 
-    
       <div id="method-c-new" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">new</span><span
             class="method-args">(params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
           
-          
-          
 
-          
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 27</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">params</span> = {}
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">params</span> = {}
   <span class="ruby-ivar">@parameters</span> = <span class="ruby-identifier">params</span>
+  <span class="ruby-ivar">@request_types</span> = <span class="ruby-constant">REQUEST_TYPES</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- new-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- new-method -->
+      </div>
 
-    
       <div id="method-c-phrase" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">phrase</span><span
             class="method-args">(phrase, params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
-          <p>Initializes a report for a specific phrase (or keyword). Takes a hash
-parameter that may contain the following keys :</p>
+          <p>Initializes a report for a specific phrase (or keyword). Takes a hash parameter that may contain the following keys :</p>
 <ul><li>
 <p>:db (ex: :db =&gt; “us”)</p>
 </li><li>
@@ -319,37 +219,75 @@ parameter that may contain the following keys :</p>
 </li><li>
 <p>:export_columns (ex: :export_columns =&gt; “”)</p>
 </li></ul>
-          
 
-          
           <div class="method-source-code" id="phrase-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 48</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">phrase</span> <span class="ruby-identifier">phrase</span>, <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:phrase</span>, <span class="ruby-value">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">phrase</span>))
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">phrase</span> <span class="ruby-identifier">phrase</span>, <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">phrase</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- phrase-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- phrase-method -->
+      </div>
 
-    
+      <div id="method-c-remaining_quota" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">remaining_quota</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Initializes &amp; calls a report for the remaining API units Takes a hash parameter that may contain the following keys :</p>
+<ul><li>
+<p>:api_key (ex: :api_key =&gt; ‘gt97s6d4a6w’)</p>
+</li></ul>
+
+          <div class="method-source-code" id="remaining_quota-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">remaining_quota</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-ivar">@remaining_quota_url</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">temp_url</span> = <span class="ruby-node">&quot;#{API_UNITS_URL}&quot;</span> <span class="ruby-comment">#do not copy the constant as is or else the constant would be modified !!</span>
+    <span class="ruby-identifier">params</span> = {<span class="ruby-value">:api_key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Semrush</span>.<span class="ruby-identifier">api_key</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span>
+        <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/&amp;[^&amp;=]+=%#{k.to_s}%/i</span>, <span class="ruby-string">&#39;&#39;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">&quot;%#{k.to_s.upcase}%&quot;</span>, <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;&amp;&#39;</span>, <span class="ruby-string">&#39;%26&#39;</span>))
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-identifier">temp_url</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;[Semrush query] URL: #{@remaining_quota_url}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Semrush</span>.<span class="ruby-identifier">debug</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@remaining_quota_url</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">url</span>.<span class="ruby-identifier">host</span>, <span class="ruby-identifier">url</span>.<span class="ruby-identifier">port</span>, <span class="ruby-value">:use_ssl</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">http</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">url</span>.<span class="ruby-identifier">path</span><span class="ruby-string">+&quot;?&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">url</span>.<span class="ruby-identifier">query</span>)
+  }
+  <span class="ruby-identifier">body</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">response</span>[<span class="ruby-string">&#39;location&#39;</span>].<span class="ruby-identifier">present?</span>  <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">response</span>[<span class="ruby-string">&#39;location&#39;</span>]<span class="ruby-operator">!=</span><span class="ruby-ivar">@remaining_quota_url</span>
+    <span class="ruby-ivar">@remaining_quota_url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">join</span>(<span class="ruby-node">&quot;http://#{url.host}&quot;</span>, <span class="ruby-identifier">response</span>[<span class="ruby-string">&#39;location&#39;</span>]).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">remaining_quota</span> <span class="ruby-identifier">params</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">body</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-string">&quot;utf-8&quot;</span>)
+    <span class="ruby-identifier">body</span>.<span class="ruby-identifier">starts_with?</span>(<span class="ruby-string">&quot;ERROR&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">body</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-c-url" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">url</span><span
             class="method-args">(url, params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
-          <p>Initializes a report for a specific domain. Takes a hash parameter that may
-contain the following keys :</p>
+          <p>Initializes a report for a specific domain. Takes a hash parameter that may contain the following keys :</p>
 <ul><li>
 <p>:db (ex: :db =&gt; “us”)</p>
 </li><li>
@@ -361,295 +299,34 @@ contain the following keys :</p>
 </li><li>
 <p>:export_columns (ex: :export_columns =&gt; “”)</p>
 </li></ul>
-          
 
-          
           <div class="method-source-code" id="url-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 58</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">url</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:url</span>, <span class="ruby-value">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>))
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">url</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:request_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url</span>, <span class="ruby-value">:request</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- url-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- url-method -->
+      </div>
 
-    
-    </section><!-- public-class-method-details -->
-  
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+    </section>
 
-    
-      <div id="method-i-basics" class="method-detail ">
-        
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-adwords" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">basics</span><span
+          <span class="method-name">adwords</span><span
             class="method-args">(params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
-          <p>Main report. Available for a phrase or a domain. Default columns for a
-domain:</p>
-<ul><li>
-<p>Dn - A site name.</p>
-</li><li>
-<p>Rk - Rating of sites by the number of visitors coming from the first 20
-Google search results</p>
-</li><li>
-<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
-</li><li>
-<p>Ot - Estimated number of visitors coming from the first 20 Google search
-results (per month)</p>
-</li><li>
-<p>Oc - Estimated cost of purchasing the same number of visitors</p>
-</li><li>
-<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
-</li><li>
-<p>At - Estimated number of visitors coming from AdWords (per month)</p>
-</li><li>
-<p>Ac - Estimated expenses of the site for the advertising in AdWords (per
-month)</p>
-</li></ul>
-
-<p>Default columns for a phrase:</p>
-<ul><li>
-<p>Ph - The search query which the site has within the first 20 Google search
-results</p>
-</li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
-</li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
-</li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
-</li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
-</li></ul>
-          
-
-          
-          <div class="method-source-code" id="basics-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 79</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">basics</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">domain?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_rank</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:phrase_this</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- basics-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- basics-method -->
-
-    
-      <div id="method-i-competitors_adwords" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">competitors_adwords</span><span
-            class="method-args">(params = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Competitors in AdWords search report Default columns:</p>
-<ul><li>
-<p>Dn - Sites competing with this site in AdWords, sorted by the number of
-common keywords</p>
-</li><li>
-<p>Np - Number of common keywords in AdWords that these two sites buy</p>
-</li><li>
-<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
-</li><li>
-<p>At - Estimated number of visitors coming from AdWords (per month)</p>
-</li><li>
-<p>Ac - Estimated expenses of the site for the advertising in AdWords (per
-month)</p>
-</li><li>
-<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
-</li></ul>
-          
-
-          
-          <div class="method-source-code" id="competitors_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 160</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">competitors_adwords</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_adwords_adwords</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- competitors_adwords-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- competitors_adwords-method -->
-
-    
-      <div id="method-i-competitors_adwords_by_organic" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">competitors_adwords_by_organic</span><span
-            class="method-args">(params = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Potential ad/traffic sellers report Default columns:</p>
-<ul><li>
-<p>Dn - Sites that get into Google TOP20 for keyword queries that analyzed
-site buy in AdWords</p>
-</li><li>
-<p>Np - The number of keywords which this site has in search results next to
-the AdWords ads of the analyzed site</p>
-</li><li>
-<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
-</li><li>
-<p>Ot - Estimated number of visitors coming from the first 20 Google search
-results (per month)</p>
-</li><li>
-<p>Oc - Estimated cost of purchasing the same number of visitors</p>
-</li><li>
-<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
-</li></ul>
-          
-
-          
-          <div class="method-source-code" id="competitors_adwords_by_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 184</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">competitors_adwords_by_organic</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_adwords_organic</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- competitors_adwords_by_organic-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- competitors_adwords_by_organic-method -->
-
-    
-      <div id="method-i-competitors_organic" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">competitors_organic</span><span
-            class="method-args">(params = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Competitors in organic search report Default columns:</p>
-<ul><li>
-<p>Dn - Sites competing with this site in Google search results, sorted by the
-number of common keywords</p>
-</li><li>
-<p>Np - The number of keywords on which the site is displayed in search
-results next to the analyzed site</p>
-</li><li>
-<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
-</li><li>
-<p>Ot - Estimated number of visitors coming from the first 20 Google search
-results (per month)</p>
-</li><li>
-<p>Oc - Estimated cost of purchasing the same number of visitors</p>
-</li><li>
-<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
-</li></ul>
-          
-
-          
-          <div class="method-source-code" id="competitors_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 148</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">competitors_organic</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_organic_organic</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- competitors_organic-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- competitors_organic-method -->
-
-    
-      <div id="method-i-competitors_organic_by_adwords" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">competitors_organic_by_adwords</span><span
-            class="method-args">(params = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Potential ad/traffic buyers report Default columns:</p>
-<ul><li>
-<p>Dn - The list of sites that buys ads in AdWords for those keywords that the
-domain under analyzis has within Google TOP20</p>
-</li><li>
-<p>Np - Number of keywords on which ads of this particular site appear and the
-analyzed site gets within Google TOP20</p>
-</li><li>
-<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
-</li><li>
-<p>At - Estimated number of visitors coming from AdWords (per month)</p>
-</li><li>
-<p>Ac - Estimated expenses of the site for the advertising in AdWords (per
-month)</p>
-</li><li>
-<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
-</li></ul>
-          
-
-          
-          <div class="method-source-code" id="competitors_organic_by_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 172</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">competitors_organic_by_adwords</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_organic_adwords</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- competitors_organic_by_adwords-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- competitors_organic_by_adwords-method -->
-
-    
-      <div id="method-i-keywords_adwords" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">keywords_adwords</span><span
-            class="method-args">(params = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>AdWords keywords report Can be called for a domain or a URL. Default
-columns for a domain:</p>
+          <p>AdWords report Can be called for a domain or a URL. Default columns for a domain:</p>
 <ul><li>
 <p>Ph - Search query which the site buys in AdWords in Google</p>
 </li><li>
@@ -657,282 +334,523 @@ columns for a domain:</p>
 </li><li>
 <p>Pp - The position of the ad at the time of previous data collection</p>
 </li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
 </li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
 </li><li>
-<p>Vu - Display URL. This is the URL displayed on your ad to identify your
-site to users.</p>
+<p>Vu - Display URL. This is the URL displayed on your ad to identify your site to users.</p>
 </li><li>
-<p>Tr - The ratio of the number of visitors coming to the site from this ad to
-all visitors coming from Google AdWords</p>
+<p>Tr - The ratio of the number of visitors coming to the site from this ad to all visitors coming from Google AdWords</p>
 </li><li>
-<p>Tc - The ratio of site’s expenditures on this particular ad to it’s
-expenditures on all AdWords ads in general</p>
+<p>Tc - The ratio of site’s expenditures on this particular ad to it’s expenditures on all AdWords ads in general</p>
 </li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
 </li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
 </li><li>
-<p>Td - Dynamics of change in the number of search queries in the past 12
-months (estimated)</p>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
 </li><li>
-<p>Ur - The destination URL is the exact URL within your website that you want
-to send users to from your ad.</p>
+<p>Ur - The destination URL is the exact URL within your website that you want to send users to from your ad.</p>
 </li></ul>
 
 <p>Default columns for a URL:</p>
 <ul><li>
-<p>Ph - Search query that the URL has within the first 20 Google Organic or
-AdWords results</p>
+<p>Ph - Search query that the URL has within the first 20 Google Organic or AdWords results</p>
 </li><li>
-<p>Po - The position of this URL for this keyword in Organic or AdWords
-results</p>
+<p>Po - The position of this URL for this keyword in Organic or AdWords results</p>
 </li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
 </li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
 </li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
 </li><li>
-<p>Tr - The ratio of the number of visitors coming to the URL from this
-keyword to all visitors coming</p>
+<p>Tr - The ratio of the number of visitors coming to the URL from this keyword to all visitors coming</p>
 </li><li>
-<p>Tc - The ratio of the estimated cost of buying the same number of visitors
-for this search query to the estimated cost of purchasing the same number
-of targeted visitors coming to this URL</p>
+<p>Tc - The ratio of the estimated cost of buying the same number of visitors for this search query to the estimated cost of purchasing the same number of targeted visitors coming to this URL</p>
 </li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
 </li><li>
-<p>Td - Dynamics of change in the number of search queries in the past 12
-months (estimated)</p>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
 </li></ul>
-          
 
-          
-          <div class="method-source-code" id="keywords_adwords-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 136</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">keywords_adwords</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">url?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:url_adwords</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_adwords</span>))
+          <div class="method-source-code" id="adwords-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">adwords</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">url?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url_adwords</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- keywords_adwords-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- keywords_adwords-method -->
+      </div>
 
-    
+      <div id="method-i-basics" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">basics</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Main report. Available for a phrase or a domain. Default columns for a domain:</p>
+<ul><li>
+<p>Dn - A site name.</p>
+</li><li>
+<p>Rk - Rating of sites by the number of visitors coming from the first 20 Google search results</p>
+</li><li>
+<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
+</li><li>
+<p>Ot - Estimated number of visitors coming from the first 20 Google search results (per month)</p>
+</li><li>
+<p>Oc - Estimated cost of purchasing the same number of visitors</p>
+</li><li>
+<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
+</li><li>
+<p>At - Estimated number of visitors coming from AdWords (per month)</p>
+</li><li>
+<p>Ac - Estimated expenses of the site for the advertising in AdWords (per month)</p>
+</li></ul>
+
+<p>Default columns for a phrase:</p>
+<ul><li>
+<p>Ph - The search query which the site has within the first 20 Google search results</p>
+</li><li>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
+</li><li>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
+</li><li>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
+</li><li>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
+</li></ul>
+
+          <div class="method-source-code" id="basics-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">basics</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">domain?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_rank</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_this</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-competitors_adwords" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">competitors_adwords</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Competitors in AdWords search report Default columns:</p>
+<ul><li>
+<p>Dn - Sites competing with this site in AdWords, sorted by the number of common keywords</p>
+</li><li>
+<p>Np - Number of common keywords in AdWords that these two sites buy</p>
+</li><li>
+<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
+</li><li>
+<p>At - Estimated number of visitors coming from AdWords (per month)</p>
+</li><li>
+<p>Ac - Estimated expenses of the site for the advertising in AdWords (per month)</p>
+</li><li>
+<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
+</li></ul>
+
+          <div class="method-source-code" id="competitors_adwords-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_adwords</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_adwords</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-competitors_adwords_by_organic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">competitors_adwords_by_organic</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Potential ad/traffic sellers report Default columns:</p>
+<ul><li>
+<p>Dn - Sites that get into Google TOP20 for keyword queries that analyzed site buy in AdWords</p>
+</li><li>
+<p>Np - The number of keywords which this site has in search results next to the AdWords ads of the analyzed site</p>
+</li><li>
+<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
+</li><li>
+<p>Ot - Estimated number of visitors coming from the first 20 Google search results (per month)</p>
+</li><li>
+<p>Oc - Estimated cost of purchasing the same number of visitors</p>
+</li><li>
+<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
+</li></ul>
+
+          <div class="method-source-code" id="competitors_adwords_by_organic-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_adwords_by_organic</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_organic</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-competitors_organic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">competitors_organic</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Competitors in organic search report Default columns:</p>
+<ul><li>
+<p>Dn - Sites competing with this site in Google search results, sorted by the number of common keywords</p>
+</li><li>
+<p>Np - The number of keywords on which the site is displayed in search results next to the analyzed site</p>
+</li><li>
+<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
+</li><li>
+<p>Ot - Estimated number of visitors coming from the first 20 Google search results (per month)</p>
+</li><li>
+<p>Oc - Estimated cost of purchasing the same number of visitors</p>
+</li><li>
+<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
+</li></ul>
+
+          <div class="method-source-code" id="competitors_organic-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_organic</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_organic_organic</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-competitors_organic_by_adwords" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">competitors_organic_by_adwords</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Potential ad/traffic buyers report Default columns:</p>
+<ul><li>
+<p>Dn - The list of sites that buys ads in AdWords for those keywords that the domain under analyzis has within Google TOP20</p>
+</li><li>
+<p>Np - Number of keywords on which ads of this particular site appear and the analyzed site gets within Google TOP20</p>
+</li><li>
+<p>Ad - Keywords that this site has in TOP20 Google AdWords</p>
+</li><li>
+<p>At - Estimated number of visitors coming from AdWords (per month)</p>
+</li><li>
+<p>Ac - Estimated expenses of the site for the advertising in AdWords (per month)</p>
+</li><li>
+<p>Or - Keywords that this site has in TOP20 Google Organic results</p>
+</li></ul>
+
+          <div class="method-source-code" id="competitors_organic_by_adwords-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">competitors_organic_by_adwords</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_organic_adwords</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-fullsearch" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">fullsearch</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Fullsearch keyword report Default columns:</p>
+<ul><li>
+<p>Ph - The search query which the site has within the first 20 Google search results</p>
+</li><li>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
+</li><li>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
+</li><li>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
+</li><li>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
+</li><li>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
+</li></ul>
+
+          <div class="method-source-code" id="fullsearch-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fullsearch</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_fullsearch</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-history_adwords" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">history_adwords</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Ads history for domain or phrase Default columns:</p>
+
+          <div class="method-source-code" id="history_adwords-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">history_adwords</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">domain?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_adwords_historical</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_adwords_historical</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-kdi" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">kdi</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Keyword Difficulty report Usage: &gt; report = <a href="Report.html#method-c-phrase"><code>Semrush::Report.phrase</code></a>(phrases.join(‘;’), database: ‘us’, limit: 100).kdi <a href="Report.html"><code>Report</code></a> constants an array of hashes:</p>
+<ul><li>
+<p>keyword - phrase for KDI</p>
+</li><li>
+<p>keyword_difficulty_index - KDI for phrase</p>
+</li></ul>
+
+          <div class="method-source-code" id="kdi-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">kdi</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_kdi</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-keywords_adwords" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">keywords_adwords</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="keywords_adwords-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keywords_adwords</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;[DEPRECATION] `keywords_adwords` is deprecated.  Please use `adwords` instead.&quot;</span>
+  <span class="ruby-identifier">adwords</span>(<span class="ruby-identifier">params</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-keywords_organic" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">keywords_organic</span><span
             class="method-args">(params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
           
-          <p>Organic Keywords report Can be called for a domain or a URL. Default
-columns for a domain:</p>
-<ul><li>
-<p>Ph - The search query which the site has within the first 20 Google search
-results</p>
-</li><li>
-<p>Po - The position of the site for the search query in Google, at the moment
-of data collection</p>
-</li><li>
-<p>Pp - The position of the site for the search query in Google, for the
-previous data collection</p>
-</li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
-</li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
-</li><li>
-<p>Ur - URL of a page of the site which is displayed in search results for
-this query (landing page)</p>
-</li><li>
-<p>Tr - The ratio of the number of visitors coming to the site from this
-search request to all visitors coming from Google search results</p>
-</li><li>
-<p>Tc - The ratio of the estimated cost of buying the same number of visitors
-for this search query to the estimated cost of purchasing the same number
-of targeted visitors coming to this site from Google search results</p>
-</li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
-</li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
-</li><li>
-<p>Td - Dynamics of change in the number of search queries in the past 12
-months (estimated)</p>
-</li></ul>
 
-<p>Default columns for a URL:</p>
-<ul><li>
-<p>Ph - Search query that the URL has within the first 20 Google Organic or
-AdWords results</p>
-</li><li>
-<p>Po - The position of this URL for this keyword in Organic or AdWords
-results</p>
-</li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
-</li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
-</li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
-</li><li>
-<p>Tr - The ratio of the number of visitors coming to the URL from this
-keyword to all visitors coming</p>
-</li><li>
-<p>Tc - The ratio of the estimated cost of buying the same number of visitors
-for this search query to the estimated cost of purchasing the same number
-of targeted visitors coming to this URL</p>
-</li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
-</li><li>
-<p>Td - Dynamics of change in the number of search queries in the past 12
-months (estimated)</p>
-</li></ul>
-          
-
-          
           <div class="method-source-code" id="keywords_organic-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 107</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">keywords_organic</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">url?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:url_organic</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:domain_organic</span>))
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keywords_organic</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;[DEPRECATION] `keywords_organic` is deprecated.  Please use `organic` instead.&quot;</span>
+  <span class="ruby-identifier">organic</span>(<span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- keywords_organic-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- keywords_organic-method -->
+      </div>
 
-    
       <div id="method-i-method_missing" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">method_missing</span><span
             class="method-args">(method, *args)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
-          <p>Tries to make the api call for the report called as method (see samples on
-<a href="http://www.semrush.com/api.html">www.semrush.com/api.html</a>).
-Allows calls like:</p>
+          <p>Tries to make the api call for the report called as method (see samples on <a href="http://www.semrush.com/api.html">www.semrush.com/api.html</a>). Allows calls like:</p>
 <ul><li>
-<p><a href="Report.html#method-c-new">::new</a>.domain_rank(:request_type
-=&gt; :domain, :request =&gt; 'thedomain.com')</p>
+<p><a href="Report.html#method-c-new"><code>Semrush::Report.new</code></a>.domain_rank(:request_type =&gt; :domain, :request =&gt; ‘thedomain.com’)</p>
 </li><li>
-<p><a
-href="Report.html#method-c-new">::new</a>.domain_organic_organic(:request_type
-=&gt; :domain, :request =&gt; 'thedomain.com')</p>
+<p><a href="Report.html#method-c-new"><code>Semrush::Report.new</code></a>.domain_organic_organic(:request_type =&gt; :domain, :request =&gt; ‘thedomain.com’)</p>
 </li><li>
-<p><a href="Report.html#method-c-new">::new</a>.phrase_related(:request_type
-=&gt; :phrase, :request =&gt; 'the phrase')</p>
+<p><a href="Report.html#method-c-new"><code>Semrush::Report.new</code></a>.phrase_related(:request_type =&gt; :phrase, :request =&gt; ‘the+phrase’)</p>
+</li><li>
+<p><a href="Report.html#method-c-new"><code>Semrush::Report.new</code></a>.phrase_fullsearch(:request_type =&gt; :phrase, :request =&gt; ‘the+phrase’)</p>
 </li></ul>
-          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
 
-          
           <div class="method-source-code" id="method_missing-source">
             <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">REPORT_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
-  <span class="ruby-identifier">request</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">request</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">method</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- method_missing-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- method_missing-method -->
+      </div>
 
-    
+      <div id="method-i-organic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">organic</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Organic report Can be called for a domain or a URL. Default columns for a domain:</p>
+<ul><li>
+<p>Ph - The search query which the site has within the first 20 Google search results</p>
+</li><li>
+<p>Po - The position of the site for the search query in Google, at the moment of data collection</p>
+</li><li>
+<p>Pp - The position of the site for the search query in Google, for the previous data collection</p>
+</li><li>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
+</li><li>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
+</li><li>
+<p>Ur - URL of a page of the site which is displayed in search results for this query (landing page)</p>
+</li><li>
+<p>Tr - The ratio of the number of visitors coming to the site from this search request to all visitors coming from Google search results</p>
+</li><li>
+<p>Tc - The ratio of the estimated cost of buying the same number of visitors for this search query to the estimated cost of purchasing the same number of targeted visitors coming to this site from Google search results</p>
+</li><li>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
+</li><li>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
+</li><li>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
+</li></ul>
+
+<p>Default columns for a URL:</p>
+<ul><li>
+<p>Ph - Search query that the URL has within the first 20 Google Organic or AdWords results</p>
+</li><li>
+<p>Po - The position of this URL for this keyword in Organic or AdWords results</p>
+</li><li>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
+</li><li>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
+</li><li>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
+</li><li>
+<p>Tr - The ratio of the number of visitors coming to the URL from this keyword to all visitors coming</p>
+</li><li>
+<p>Tc - The ratio of the estimated cost of buying the same number of visitors for this search query to the estimated cost of purchasing the same number of targeted visitors coming to this URL</p>
+</li><li>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
+</li><li>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
+</li></ul>
+
+<p>Default columns for a phrase:</p>
+<ul><li>
+<p>Dn - A site name</p>
+</li><li>
+<p>Ur - Target URL</p>
+</li></ul>
+
+          <div class="method-source-code" id="organic-source">
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">organic</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-keyword">case</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">url?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:url_organic</span>))
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">phrase?</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_organic</span>))
+  <span class="ruby-keyword">else</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:domain_organic</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-related" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">related</span><span
             class="method-args">(params = {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
-          
           <p>Related keyword report Default columns:</p>
 <ul><li>
-<p>Ph - The search query which the site has within the first 20 Google search
-results</p>
+<p>Ph - The search query which the site has within the first 20 Google search results</p>
 </li><li>
-<p>Nq - Average number of queries of this keyword in a month, for the
-corresponding local version of Google</p>
+<p>Nq - Average number of queries of this keyword in a month, for the corresponding local version of Google</p>
 </li><li>
-<p>Cp - Average price of a click on the AdWords ad for this search query, in
-U.S. dollars</p>
+<p>Cp - Average price of a click on the AdWords ad for this search query, in U.S. dollars</p>
 </li><li>
-<p>Co - Competition of advertisers in AdWords for that term, the higher is the
-number - the higher is the competition</p>
+<p>Co - Competition of advertisers in AdWords for that term, the higher is the number - the higher is the competition</p>
 </li><li>
-<p>Nr - The number of search results - how many pages does Google know for
-this query</p>
+<p>Nr - The number of search results - how many pages does Google know for this query</p>
 </li><li>
-<p>Td - Dynamics of change in the number of search queries in the past 12
-months (estimated)</p>
+<p>Td - Dynamics of change in the number of search queries in the past 12 months (estimated)</p>
 </li></ul>
-          
 
-          
           <div class="method-source-code" id="related-source">
-            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 196</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">related</span> <span class="ruby-identifier">params</span> = {}
-  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:phrase_related</span>))
+            <pre><span class="ruby-comment"># File lib/semrush/report.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">related</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">request</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:phrase_related</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- related-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- related-method -->
+      </div>
 
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
+    </section>
 
-</div><!-- documentation -->
+  </section>
+</main>
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

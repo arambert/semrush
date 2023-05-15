@@ -2,227 +2,145 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>Module: Semrush</title>
-
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<title>module Semrush - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/semrush/exception/api_access_disabled.rb
-    <li>lib/semrush/exception/bad_api_key.rb
-    <li>lib/semrush/exception/bad_argument.rb
-    <li>lib/semrush/exception/bad_query.rb
-    <li>lib/semrush/exception/nothing_found.rb
-    <li>lib/semrush/exception/unknown_error.rb
-    <li>lib/semrush/exception.rb
-    <li>lib/semrush/report.rb
-    <li>lib/semrush/version.rb
-    <li>lib/semrush.rb
-  </ul>
-</nav>
-
-    
   </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
 
   <div id="class-metadata">
     
     
     
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
     
-    <li><a href="#method-c-config">::config</a>
     
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-config">::config</a>
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Gemfile.html">Gemfile</a>
-  
-    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
-  
-    <li class="file"><a href="./README_rdoc.html">README</a>
-  
-    <li class="file"><a href="./Rakefile.html">Rakefile</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Semrush.html">Semrush</a>
-  
-    <li><a href="./Semrush/Exception.html">Semrush::Exception</a>
-  
-    <li><a href="./Semrush/Exception/ApiAccessDisabled.html">Semrush::Exception::ApiAccessDisabled</a>
-  
-    <li><a href="./Semrush/Exception/BadApiKey.html">Semrush::Exception::BadApiKey</a>
-  
-    <li><a href="./Semrush/Exception/BadArgument.html">Semrush::Exception::BadArgument</a>
-  
-    <li><a href="./Semrush/Exception/BadQuery.html">Semrush::Exception::BadQuery</a>
-  
-    <li><a href="./Semrush/Exception/Base.html">Semrush::Exception::Base</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterDomainNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterDomainNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterPhraseNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterPhraseNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/MandatoryParameterUrlNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterUrlNotSetOrEmtpy</a>
-  
-    <li><a href="./Semrush/Exception/NothingFound.html">Semrush::Exception::NothingFound</a>
-  
-    <li><a href="./Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
-  
-    <li><a href="./Semrush/Exception/WrongFormatOrEmptyKey.html">Semrush::Exception::WrongFormatOrEmptyKey</a>
-  
-    <li><a href="./Semrush/Report.html">Semrush::Report</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="module">module Semrush</h1>
+<main role="main" aria-labelledby="module-Semrush">
+  <h1 id="module-Semrush" class="module">
+    module Semrush
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
-  
-  
-  
   <section id="5Buntitled-5D" class="documentation-section">
-    
 
-    
 
-    
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
-      
+        <dt id="API_ANALYTICS_URL">API_ANALYTICS_URL
+        <dd><p>See <a href="https://developer.semrush.com/api/v3/analytics/basic-docs">developer.semrush.com/api/v3/analytics/basic-docs</a>/</p>
         <dt id="API_REPORT_URL">API_REPORT_URL
-        
-        <dd class="description">
-        
-      
+        <dd>
+        <dt id="API_UNITS_URL">API_UNITS_URL
+        <dd>
         <dt id="VERSION">VERSION
-        
-        <dd class="description">
-        
-      
+        <dd>
       </dl>
     </section>
-    
 
-    
 
-    <!-- Methods -->
-    
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
 
-    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
       <div id="method-c-config" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">config</span><span
             class="method-args">() { |self| ... }</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
-        
 
         <div class="method-description">
           
-          
-          
 
-          
           <div class="method-source-code" id="config-source">
-            <pre><span class="ruby-comment"># File lib/semrush.rb, line 32</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">config</span>
+            <pre><span class="ruby-comment"># File lib/semrush.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">config</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>
-  <span class="ruby-constant">Pony</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">@@email_options</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadApiKey</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@api_key</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">@@api_key</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;before is not a proc: proc type is required.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@before</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;after is not a proc: proc type is required.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@after</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- config-source -->
-          
+          </div>
         </div>
 
-        
 
-        
-      </div><!-- config-method -->
+      </div>
 
-    
-    </section><!-- public-class-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
+    </section>
 
-</div><!-- documentation -->
+  </section>
+</main>
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
