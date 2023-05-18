@@ -114,7 +114,7 @@
           <p>Format and raise an error</p>
 
           <div class="method-source-code" id="error-source">
-            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">error</span>(<span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;&quot;</span>)
   <span class="ruby-identifier">e</span> = <span class="ruby-regexp">/ERROR\s(\d+)\s::\s(.*)/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">text</span>) <span class="ruby-operator">||</span> {}
   <span class="ruby-identifier">name</span> = (<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;UnknownError&quot;</span>).<span class="ruby-identifier">titleize</span>
@@ -148,7 +148,7 @@
           
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/semrush/base.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;&quot;</span>)
   <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
   <span class="ruby-identifier">csv</span> = <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value">:col_sep</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;;&quot;</span>)
@@ -203,6 +203,9 @@
       <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/&amp;[^&amp;=]+=%#{k.to_s}%/i</span>, <span class="ruby-string">&#39;&#39;</span>)
     <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span><span class="ruby-operator">==</span><span class="ruby-value">:display_filter</span>
       <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">&quot;%#{k.to_s.upcase}%&quot;</span>, <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;&amp;&#39;</span>, <span class="ruby-string">&#39;%26&#39;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;+&#39;</span>, <span class="ruby-string">&#39;%2B&#39;</span>))
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-comment"># remove placeholder with value into query string of array of values</span>
+      <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">&quot;#{k}=%#{k.to_s.upcase}%&quot;</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_query</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>))
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">temp_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">&quot;%#{k.to_s.upcase}%&quot;</span>, <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;&amp;&#39;</span>, <span class="ruby-string">&#39;%26&#39;</span>))
     <span class="ruby-keyword">end</span>

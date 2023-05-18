@@ -9,6 +9,9 @@ module Semrush
           temp_url.gsub!(/&[^&=]+=%#{k.to_s}%/i, '')
         elsif k.to_sym==:display_filter
           temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26').gsub('+', '%2B'))
+        elsif v.is_a?(Array)
+          # remove placeholder with value into query string of array of values
+          temp_url.gsub!("#{k}=%#{k.to_s.upcase}%", v.to_query(k.to_s))
         else
           temp_url.gsub!("%#{k.to_s.upcase}%", CGI.escape(v.to_s).gsub('&', '%26'))
         end

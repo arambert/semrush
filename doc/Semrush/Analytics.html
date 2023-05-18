@@ -72,6 +72,7 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
+    <li ><a href="#method-c-backlinks_comparison">::backlinks_comparison</a>
     <li ><a href="#method-c-backlinks_refdomains">::backlinks_refdomains</a>
     <li ><a href="#method-c-new">::new</a>
   </ul>
@@ -128,6 +129,52 @@
          <h3>Public Class Methods</h3>
        </header>
 
+      <div id="method-c-backlinks_comparison" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">backlinks_comparison</span><span
+            class="method-args">(targets, target_types, params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Compare your and your competitors’ backlink profiles and link-building progress.</p>
+<ul><li>
+<p>:api_key (ex: :api_key =&gt; ‘gt97s6d4a6w’)</p>
+</li><li>
+<p>:targets (ex: :targets =&gt; [“domain1.com”, “domain2.com”]) Array of domains to compare</p>
+</li><li>
+<p>:target_types (ex: :target_type =&gt; [“root_domain”, “root_domain”]) Array to match with corresponding targets index</p>
+</li><li>
+<p>:export_columns (ex: :export_columns =&gt; “”), available columns: “target,target_type,ascore,backlinks_num,domains_num,ips_num,follows_num,nofollows_num,texts_num,images_num,forms_num,frames_num”</p>
+</li><li>
+<p>Return array of data</p>
+</li></ul>
+
+<p>@see <a href="https://developer.semrush.com/api/v3/analytics/backlinks/#batch_comparason">developer.semrush.com/api/v3/analytics/backlinks/#batch_comparason</a> @see <a href="https://www.semrush.com/batch/report">www.semrush.com/batch/report</a>/ for UI demo</p>
+
+          <div class="method-source-code" id="backlinks_comparison-source">
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_comparison</span>(<span class="ruby-identifier">targets</span>, <span class="ruby-identifier">target_types</span>, <span class="ruby-identifier">params</span> = {})
+  <span class="ruby-identifier">target_types</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target_type</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-node">&quot;One of `target_types` is not valid: #{target_type}&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-constant">REQUEST_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">target_type</span>.<span class="ruby-identifier">to_sym</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;`targets` and `target_types` must be the same size&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">targets</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target_types</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">export_columns</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:export_columns</span>).<span class="ruby-identifier">presence</span> <span class="ruby-operator">||</span>
+    <span class="ruby-string">&quot;target,target_type,ascore,backlinks_num,domains_num,ips_num,follows_num,nofollows_num,texts_num,images_num,forms_num,frames_num&quot;</span>
+  <span class="ruby-comment"># Have to add target and target_type to params to cleaup API_ANALYTICS_URL (in #request v.blank? check)</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_comparison</span>, <span class="ruby-value">:targets</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">targets</span>, <span class="ruby-value">:target_types</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">target_types</span>,
+                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>,
+                        ))
+      .<span class="ruby-identifier">request</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-c-backlinks_refdomains" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">backlinks_refdomains</span><span
@@ -155,12 +202,13 @@
 
           <div class="method-source-code" id="backlinks_refdomains-source">
             <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 29</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_refdomains</span> <span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {}
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_refdomains</span>(<span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">export_columns</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:export_columns</span>).<span class="ruby-identifier">presence</span> <span class="ruby-operator">||</span>
     <span class="ruby-string">&quot;domain_ascore,domain,backlinks_num,ip,country,first_seen,last_seen&quot;</span>
 
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_refdomains</span>, <span class="ruby-value">:target</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>,
-                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>)).<span class="ruby-identifier">request</span>
+                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>))
+      .<span class="ruby-identifier">request</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
