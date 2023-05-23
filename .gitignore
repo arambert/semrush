@@ -1,0 +1,6 @@
+.idea
+./vscode
+.rvmrc
+.ruby-version
+Dockerfile
+tmp/

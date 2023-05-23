@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Semrush::Analytics - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Base
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-backlinks_comparison">::backlinks_comparison</a>
+    <li ><a href="#method-c-backlinks_refdomains">::backlinks_refdomains</a>
+    <li ><a href="#method-c-new">::new</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Semrush::Analytics">
+  <h1 id="class-Semrush::Analytics" class="class">
+    class Semrush::Analytics
+  </h1>
+
+  <section class="description">
+    
+<h1 id="class-Semrush::Analytics-label-Analytics+Class"><a href="Analytics.html"><code>Analytics</code></a> Class<span><a href="#class-Semrush::Analytics-label-Analytics+Class">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Most of these methods take a hash parameter that may contain the following keys : There is no db filter for analytics api but you can use :display_filter to filter the results,</p>
+
+<pre>example: :display_filter =&gt; &quot;+|country||us&quot; will only return results from the US.</pre>
+
+<p>See <a href="https://developer.semrush.com/api/v3/analytics/basic-docs">developer.semrush.com/api/v3/analytics/basic-docs</a>/</p>
+<ul><li>
+<p>:api_key (ex: :api_key =&gt; ‘gt97s6d4a6w’)</p>
+</li><li>
+<p>:limit (ex: :limit =&gt; 2000)</p>
+</li><li>
+<p>:offset (ex: :offset =&gt; 5)</p>
+</li><li>
+<p>:export_columns (ex: :export_columns =&gt; “Dn,Rk”)</p>
+</li></ul>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="ANALYTIC_TYPES">ANALYTIC_TYPES
+        <dd>
+        <dt id="REQUEST_TYPES">REQUEST_TYPES
+        <dd>
+      </dl>
+    </section>
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-backlinks_comparison" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">backlinks_comparison</span><span
+            class="method-args">(targets, target_types, params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Compare your and your competitors’ backlink profiles and link-building progress.</p>
+<ul><li>
+<p>:api_key (ex: :api_key =&gt; ‘gt97s6d4a6w’)</p>
+</li><li>
+<p>:targets (ex: :targets =&gt; [“domain1.com”, “domain2.com”]) Array of domains to compare</p>
+</li><li>
+<p>:target_types (ex: :target_type =&gt; [“root_domain”, “root_domain”]) Array to match with corresponding targets index</p>
+</li><li>
+<p>:export_columns (ex: :export_columns =&gt; “”), available columns: “target,target_type,ascore,backlinks_num,domains_num,ips_num,follows_num,nofollows_num,texts_num,images_num,forms_num,frames_num”</p>
+</li><li>
+<p>Return array of data</p>
+</li></ul>
+
+<p>@see <a href="https://developer.semrush.com/api/v3/analytics/backlinks/#batch_comparason">developer.semrush.com/api/v3/analytics/backlinks/#batch_comparason</a> @see <a href="https://www.semrush.com/batch/report">www.semrush.com/batch/report</a>/ for UI demo</p>
+
+          <div class="method-source-code" id="backlinks_comparison-source">
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_comparison</span>(<span class="ruby-identifier">targets</span>, <span class="ruby-identifier">target_types</span>, <span class="ruby-identifier">params</span> = {})
+  <span class="ruby-identifier">target_types</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target_type</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-node">&quot;One of `target_types` is not valid: #{target_type}&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-constant">REQUEST_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">target_type</span>.<span class="ruby-identifier">to_sym</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">BadArgument</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;`targets` and `target_types` must be the same size&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">targets</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target_types</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">export_columns</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:export_columns</span>).<span class="ruby-identifier">presence</span> <span class="ruby-operator">||</span>
+    <span class="ruby-string">&quot;target,target_type,ascore,backlinks_num,domains_num,ips_num,follows_num,nofollows_num,texts_num,images_num,forms_num,frames_num&quot;</span>
+  <span class="ruby-comment"># Have to add target and target_type to params to cleaup API_ANALYTICS_URL (in #request v.blank? check)</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_comparison</span>, <span class="ruby-value">:targets</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">targets</span>, <span class="ruby-value">:target_types</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">target_types</span>,
+                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>,
+                        ))
+      .<span class="ruby-identifier">request</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-backlinks_refdomains" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">backlinks_refdomains</span><span
+            class="method-args">(domain, params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get lists domains pointing to the queried domain, root domain, or URL.</p>
+<ul><li>
+<p>:api_key (ex: :api_key =&gt; ‘gt97s6d4a6w’)</p>
+</li><li>
+<p>:limit (ex: :limit =&gt; “”)</p>
+</li><li>
+<p>:offset (ex: :offset =&gt; “”)</p>
+</li><li>
+<p>:target_type (ex: :target_type =&gt; “”) One of ‘REQUEST_TYPES`</p>
+</li><li>
+<p>:export_columns (ex: :export_columns =&gt; “”)</p>
+</li><li>
+<p>:display_filter one or many of “zone, country, ip, newdomain, lostdomain, category”</p>
+</li></ul>
+
+<p>See: <a href="https://developer.semrush.com/api/v3/analytics/backlinks/#reffering_domains">developer.semrush.com/api/v3/analytics/backlinks/#reffering_domains</a></p>
+
+          <div class="method-source-code" id="backlinks_refdomains-source">
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">backlinks_refdomains</span>(<span class="ruby-identifier">domain</span>, <span class="ruby-identifier">params</span> = {})
+  <span class="ruby-identifier">export_columns</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:export_columns</span>).<span class="ruby-identifier">presence</span> <span class="ruby-operator">||</span>
+    <span class="ruby-string">&quot;domain_ascore,domain,backlinks_num,ip,country,first_seen,last_seen&quot;</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:report_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:backlinks_refdomains</span>, <span class="ruby-value">:target</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">domain</span>,
+                        <span class="ruby-value">:export_columns</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">export_columns</span>))
+      .<span class="ruby-identifier">request</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(params = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/semrush/analytics.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-ivar">@parameters</span> = <span class="ruby-identifier">params</span>
+  <span class="ruby-ivar">@target_types</span> = <span class="ruby-constant">REQUEST_TYPES</span>
+  <span class="ruby-ivar">@api_report_url</span> = <span class="ruby-constant">API_ANALYTICS_URL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

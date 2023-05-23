@@ -2,40 +2,41 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>Table of Contents</title>
-
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<title>Table of Contents - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
 
 
-<body class="indexpage">
-<h1>Table of Contents</h1>
+<body id="top" class="table-of-contents">
+<main role="main">
+<h1 class="class">Table of Contents - RDoc Documentation</h1>
 
-<h2>Pages</h2>
+<h2 id="pages">Pages</h2>
 <ul>
   <li class="file">
     <a href="Gemfile.html">Gemfile</a>
   </li>
-    <li class="file">
+  <li class="file">
     <a href="MIT-LICENSE.html">MIT-LICENSE</a>
   </li>
-    <li class="file">
+  <li class="file">
     <a href="README_rdoc.html">README</a>
 
-    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
-    <ul class="initially-hidden">
+    <ul>
       <li><a href="README_rdoc.html#label-Semrush">Semrush</a>
       <li><a href="README_rdoc.html#label-Requirements">Requirements</a>
       <li><a href="README_rdoc.html#label-Installation">Installation</a>
@@ -44,109 +45,257 @@
       <li><a href="README_rdoc.html#label-Reports">Reports</a>
       <li><a href="README_rdoc.html#label-Source+of+reports">Source of reports</a>
       <li><a href="README_rdoc.html#label-Report+types">Report types</a>
+      <li><a href="README_rdoc.html#label-ChangeLog">ChangeLog</a>
+      <li><a href="README_rdoc.html#label-3.0.24-2C+2023-05-15">3.0.24, 2023-05-15</a>
+      <li><a href="README_rdoc.html#label-3.0.23-2C+2020-03-19">3.0.23, 2020-03-19</a>
+      <li><a href="README_rdoc.html#label-3.0.22-2C+2019-06-14">3.0.22, 2019-06-14</a>
+      <li><a href="README_rdoc.html#label-3.0.21-2C+2018-04-14">3.0.21, 2018-04-14</a>
+      <li><a href="README_rdoc.html#label-3.0.20-2C+2017-03-16">3.0.20, 2017-03-16</a>
+      <li><a href="README_rdoc.html#label-3.0.19-2C+2016-01-16">3.0.19, 2016-01-16</a>
+      <li><a href="README_rdoc.html#label-3.0.18-2C+2014-10-03">3.0.18, 2014-10-03</a>
+      <li><a href="README_rdoc.html#label-3.0.17-2C+2014-08-01">3.0.17, 2014-08-01</a>
+      <li><a href="README_rdoc.html#label-3.0.16-2C+2014-07-21">3.0.16, 2014-07-21</a>
+      <li><a href="README_rdoc.html#label-3.0.15-2C+2013-06-26">3.0.15, 2013-06-26</a>
+      <li><a href="README_rdoc.html#label-3.0.14-2C+2013-06-10">3.0.14, 2013-06-10</a>
+      <li><a href="README_rdoc.html#label-3.0.13-2C+2013-06-10">3.0.13, 2013-06-10</a>
+      <li><a href="README_rdoc.html#label-3.0.12-2C+2013-05-31">3.0.12, 2013-05-31</a>
+      <li><a href="README_rdoc.html#label-3.0.11-2C+2013-05-22">3.0.11, 2013-05-22</a>
+      <li><a href="README_rdoc.html#label-3.0.10-2C+2013-05-21">3.0.10, 2013-05-21</a>
+      <li><a href="README_rdoc.html#label-3.0.9-2C+2013-05-21">3.0.9, 2013-05-21</a>
+      <li><a href="README_rdoc.html#label-3.0.8-2C+2013-05-21">3.0.8, 2013-05-21</a>
+      <li><a href="README_rdoc.html#label-3.0.7-2C+2013-05-21">3.0.7, 2013-05-21</a>
+      <li><a href="README_rdoc.html#label-3.0.6-2C+2013-05-7">3.0.6, 2013-05-7</a>
       <li><a href="README_rdoc.html#label-About+authors">About authors</a>
     </ul>
   </li>
-    <li class="file">
+  <li class="file">
     <a href="Rakefile.html">Rakefile</a>
   </li>
-  
+  <li class="file">
+    <a href="lib/tasks/semrush_tasks_rake.html">semrush_tasks.rake</a>
+  </li>
 </ul>
 
-<h2 id="classes">Classes/Modules</h2>
+<h2 id="classes">Classes and Modules</h2>
 <ul>
+  <li class="class">
+    <a href="Object.html">Object</a>
+  </li>
   <li class="module">
     <a href="Semrush.html">Semrush</a>
   </li>
-    <li class="module">
+  <li class="class">
+    <a href="Semrush/Analytics.html">Semrush::Analytics</a>
+
+    <ul>
+      <li><a href="Semrush/Analytics.html#label-Analytics+Class">Analytics Class</a>
+    </ul>
+  </li>
+  <li class="class">
+    <a href="Semrush/Base.html">Semrush::Base</a>
+
+    <ul>
+      <li><a href="Semrush/Base.html#label-Base+Class+for+all+Semrush+API+classes">Base Class for all Semrush API classes</a>
+    </ul>
+  </li>
+  <li class="module">
     <a href="Semrush/Exception.html">Semrush::Exception</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/ApiAccessDisabled.html">Semrush::Exception::ApiAccessDisabled</a>
   </li>
-    <li class="class">
+  <li class="class">
+    <a href="Semrush/Exception/ApiReportTypeDisabled.html">Semrush::Exception::ApiReportTypeDisabled</a>
+  </li>
+  <li class="class">
+    <a href="Semrush/Exception/ApiUnitsBalanceIsZero.html">Semrush::Exception::ApiUnitsBalanceIsZero</a>
+  </li>
+  <li class="class">
     <a href="Semrush/Exception/BadApiKey.html">Semrush::Exception::BadApiKey</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/BadArgument.html">Semrush::Exception::BadArgument</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/BadQuery.html">Semrush::Exception::BadQuery</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/Base.html">Semrush::Exception::Base</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/MandatoryParameterDomainNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterDomainNotSetOrEmtpy</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/MandatoryParameterPhraseNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterPhraseNotSetOrEmtpy</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/MandatoryParameterUrlNotSetOrEmtpy.html">Semrush::Exception::MandatoryParameterUrlNotSetOrEmtpy</a>
   </li>
-    <li class="class">
+  <li class="class">
+    <a href="Semrush/Exception/Nolimit.html">Semrush::Exception::Nolimit</a>
+  </li>
+  <li class="class">
     <a href="Semrush/Exception/NothingFound.html">Semrush::Exception::NothingFound</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/UnknownError.html">Semrush::Exception::UnknownError</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Exception/WrongFormatOrEmptyKey.html">Semrush::Exception::WrongFormatOrEmptyKey</a>
   </li>
-    <li class="class">
+  <li class="class">
     <a href="Semrush/Report.html">Semrush::Report</a>
 
-    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
-    <ul class="initially-hidden">
+    <ul>
       <li><a href="Semrush/Report.html#label-Report+Class">Report Class</a>
     </ul>
   </li>
-    <li class="class">
-    <a href="Object.html">Object</a>
-  </li>
-  
 </ul>
 
 <h2 id="methods">Methods</h2>
 <ul>
-  
-    <li class="method"><a href="Semrush.html#method-c-config">::config &mdash; Semrush</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-c-domain">::domain &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-c-new">::new &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Exception/Base.html#method-c-new">::new &mdash; Semrush::Exception::Base</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-c-phrase">::phrase &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-c-url">::url &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-basics">#basics &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-competitors_adwords">#competitors_adwords &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-competitors_adwords_by_organic">#competitors_adwords_by_organic &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-competitors_organic">#competitors_organic &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-competitors_organic_by_adwords">#competitors_organic_by_adwords &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-keywords_adwords">#keywords_adwords &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-keywords_organic">#keywords_organic &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-method_missing">#method_missing &mdash; Semrush::Report</a>
-  
-    <li class="method"><a href="Semrush/Report.html#method-i-related">#related &mdash; Semrush::Report</a>
-  
+
+  <li class="method">
+    <a href="Semrush/Analytics.html#method-c-backlinks_comparison">::backlinks_comparison</a>
+    &mdash;
+    <span class="container">Semrush::Analytics</span>
+
+  <li class="method">
+    <a href="Semrush/Analytics.html#method-c-backlinks_refdomains">::backlinks_refdomains</a>
+    &mdash;
+    <span class="container">Semrush::Analytics</span>
+
+  <li class="method">
+    <a href="Semrush.html#method-c-config">::config</a>
+    &mdash;
+    <span class="container">Semrush</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-c-domain">::domain</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Analytics.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Semrush::Analytics</span>
+
+  <li class="method">
+    <a href="Semrush/Exception/Base.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Semrush::Exception::Base</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-c-phrase">::phrase</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-c-remaining_quota">::remaining_quota</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-c-url">::url</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-adwords">#adwords</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-basics">#basics</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-competitors_adwords">#competitors_adwords</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-competitors_adwords_by_organic">#competitors_adwords_by_organic</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-competitors_organic">#competitors_organic</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-competitors_organic_by_adwords">#competitors_organic_by_adwords</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Base.html#method-i-error">#error</a>
+    &mdash;
+    <span class="container">Semrush::Base</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-fullsearch">#fullsearch</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-history_adwords">#history_adwords</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-kdi">#kdi</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-keywords_adwords">#keywords_adwords</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-keywords_organic">#keywords_organic</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-method_missing">#method_missing</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-organic">#organic</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Base.html#method-i-parse">#parse</a>
+    &mdash;
+    <span class="container">Semrush::Base</span>
+
+  <li class="method">
+    <a href="Semrush/Report.html#method-i-related">#related</a>
+    &mdash;
+    <span class="container">Semrush::Report</span>
+
+  <li class="method">
+    <a href="Semrush/Base.html#method-i-request">#request</a>
+    &mdash;
+    <span class="container">Semrush::Base</span>
 </ul>
+</main>
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
