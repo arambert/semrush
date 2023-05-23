@@ -106,6 +106,10 @@ For more information about the report types, please read http://www.semrush.com/
 
 === 3.0.25, 2023-05-23
 
+* https://github.com/arambert/semrush/pull/21
+
+=== 3.0.24, 2023-05-15
+
 * Added Analytics class for the new Analytics API, not covered all the reports yet
 
 === 3.0.23, 2020-03-19
